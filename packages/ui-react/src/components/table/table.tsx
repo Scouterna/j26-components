@@ -2,11 +2,14 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   type Table as TanstackTable,
   useReactTable,
 } from "@tanstack/react-table";
+import { EllipsisVerticalIcon, ListFilterIcon } from "lucide-react";
 import { type ComponentProps, memo, useMemo, useState } from "react";
 import { cn } from "../../lib/utils.js";
+import { Button } from "../button/button.js";
 import { Card } from "../card/card.js";
 
 type Attendee = {
@@ -47,6 +50,7 @@ function TableTest() {
     columns,
     columnResizeMode: "onChange",
     getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
   });
 
   return <Table table={table} className="w-full" />;
@@ -110,12 +114,23 @@ function Table<TData>(props: Props<TData>) {
                       width: `calc(var(--header-${header?.id}-size) * 1px)`,
                     }}
                   >
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext(),
-                        )}
+                    <div className="flex justify-between pr-1">
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext(),
+                          )}
+
+                      <div className="flex gap-0.5">
+                        <Button size="tiny-icon" variant="text" color="gray">
+                          <ListFilterIcon />
+                        </Button>
+                        <Button size="tiny-icon" variant="text" color="gray">
+                          <EllipsisVerticalIcon />
+                        </Button>
+                      </div>
+                    </div>
 
                     {header.column.getCanResize() && (
                       <div
@@ -196,4 +211,4 @@ export const MemoizedTableBody = memo(
   (prev, next) => prev.table.options.data === next.table.options.data,
 ) as typeof TableBody;
 
-export { TableTest, Table };
+export { Table, TableTest };

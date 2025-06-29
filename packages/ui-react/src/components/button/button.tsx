@@ -14,6 +14,16 @@ const buttonVariants = cva(
   {
     variants: {
       color: {
+        gray: `
+          [--btn-text:var(--color-gray-800)]
+          [--btn-border:var(--color-gray-400)]
+          [--btn-bg:var(--color-gray-200)]
+          [--btn-bg-hover:var(--color-gray-4300)]
+          [--btn-bg-active:var(--color-gray-400)]
+          
+          [--btn-bg-text-hover:var(--color-gray-200)]
+          [--btn-bg-text-active:var(--color-gray-300)]
+        `,
         blue: `
           [--btn-text:var(--color-white)]
           [--btn-border:var(--color-blue)]
@@ -21,7 +31,6 @@ const buttonVariants = cva(
           [--btn-bg-hover:var(--color-blue-hover)]
           [--btn-bg-active:var(--color-blue-active)]
           
-          [--btn-text-border:var(--color-blue-600)]
           [--btn-bg-text-hover:var(--color-bluegray-100)]
           [--btn-bg-text-active:var(--color-bluegray-200)]
         `,
@@ -32,7 +41,6 @@ const buttonVariants = cva(
           [--btn-bg-hover:var(--color-orange-hover)]
           [--btn-bg-active:var(--color-orange-active)]
           
-          [--btn-text-border:var(--color-orange)]
           [--btn-bg-text-hover:var(--color-orange-100)]
           [--btn-bg-text-active:var(--color-orange-200)]
         `,
@@ -43,7 +51,6 @@ const buttonVariants = cva(
           [--btn-bg-hover:var(--color-red-hover)]
           [--btn-bg-active:var(--color-red-active)]
           
-          [--btn-text-border:var(--color-red)]
           [--btn-bg-text-hover:var(--color-red-100)]
           [--btn-bg-text-active:var(--color-red-200)]
         `,
@@ -54,7 +61,6 @@ const buttonVariants = cva(
           [--btn-bg-hover:var(--color-trackergreen-hover)]
           [--btn-bg-active:var(--color-trackergreen-active)]
           
-          [--btn-text-border:var(--color-trackergreen)]
           [--btn-bg-text-hover:var(--color-trackergreen-100)]
           [--btn-bg-text-active:var(--color-trackergreen-200)]
         `,
@@ -65,7 +71,6 @@ const buttonVariants = cva(
           [--btn-bg-hover:var(--color-discovererblue-hover)]
           [--btn-bg-active:var(--color-discovererblue-active)]
           
-          [--btn-text-border:var(--color-discovererblue)]
           [--btn-bg-text-hover:var(--color-discovererblue-100)]
           [--btn-bg-text-active:var(--color-discovererblue-200)]
         `,
@@ -76,7 +81,6 @@ const buttonVariants = cva(
           [--btn-bg-hover:var(--color-adventurerorange-hover)]
           [--btn-bg-active:var(--color-adventurerorange-active)]
           
-          [--btn-text-border:var(--color-adventurerorange)]
           [--btn-bg-text-hover:var(--color-adventurerorange-100)]
           [--btn-bg-text-active:var(--color-adventurerorange-200)]
         `,
@@ -87,7 +91,6 @@ const buttonVariants = cva(
           [--btn-bg-hover:var(--color-challengerpink-hover)]
           [--btn-bg-active:var(--color-challengerpink-active)]
           
-          [--btn-text-border:var(--color-challengerpink)]
           [--btn-bg-text-hover:var(--color-challengerpink-100)]
           [--btn-bg-text-active:var(--color-challengerpink-200)]
         `,
@@ -98,7 +101,6 @@ const buttonVariants = cva(
           [--btn-bg-hover:var(--color-roveryellow-hover)]
           [--btn-bg-active:var(--color-roveryellow-active)]
           
-          [--btn-text-border:var(--color-roveryellow)]
           [--btn-bg-text-hover:var(--color-roveryellow-100)]
           [--btn-bg-text-active:var(--color-roveryellow-200)]
         `,
@@ -129,6 +131,7 @@ const buttonVariants = cva(
       size: {
         medium: "text-base px-4 h-10 rounded-lg",
         small: "text-sm px-3 h-8 rounded-md",
+        "tiny-icon": "text-sm p-1 size-6 rounded-md",
       },
     },
     defaultVariants: {
@@ -136,6 +139,22 @@ const buttonVariants = cva(
       variant: "contained",
       size: "medium",
     },
+    compoundVariants: [
+      {
+        color: "gray",
+        variant: "text",
+        class: `
+          text-(--btn-text)
+        `,
+      },
+      {
+        color: "gray",
+        variant: "outlined",
+        class: `
+          text-(--btn-text)
+        `,
+      },
+    ],
   },
 );
 
