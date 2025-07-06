@@ -1,9 +1,12 @@
 import type { Meta, Preview } from "@storybook/react";
-import { TableTest } from "./table.js";
+import { Table } from "./table.js";
+import { TableTest } from "./table-test.js";
 
 export default {
   title: "Components/Table",
-  component: TableTest,
+  component: Table,
 } satisfies Meta;
 
-export const Simple = {} satisfies Preview;
+export const Simple = {
+  render: () => <TableTest />,
+} satisfies Preview;

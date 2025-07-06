@@ -129,37 +129,52 @@ const GroupLabel = ({
   />
 );
 
-const Item = ({ className, children, ...props }: MenuPrimitive.Item.Props) => (
-  <MenuPrimitive.Item
-    className={cn(
-      `
-        relative flex h-8 select-none items-center justify-between rounded-sm
-        px-4 leading-none
+const Item = ({
+  className,
+  children,
+  ...props
+}: MenuPrimitive.Item.Props & {
+  icon?: React.ReactNode;
+}) => {
+  const { icon, ...otherProps } = props;
 
-        after:absolute
-        after:inset-y-0
-        after:inset-x-1.5
-        after:z-[-1]
-        data-[highlighted]:after:bg-blue-100
-        data-[highlighted]:after:rounded-sm
+  return (
+    <MenuPrimitive.Item
+      className={cn(
+        `
+          relative h-8 select-none items-center rounded-sm
+          px-4 leading-none
+  
+          grid grid-cols-[1rem_auto_1rem] gap-2
+  
+          after:absolute
+          after:inset-y-0
+          after:inset-x-1.5
+          after:z-[-1]
+          data-[highlighted]:after:bg-blue-100
+          data-[highlighted]:after:rounded-sm
+  
+          data-[highlighted]:text-blue
+          data-[highlighted]:outline-none
+  
+          data-[disabled]:pointer-events-none
+          data-[disabled]:opacity-50
+  
+          group/item
+        `,
+        className,
+      )}
+      {...otherProps}
+    >
+      {icon && <span className="flex items-center justify-center">{icon}</span>}
 
-        data-[highlighted]:text-blue
-        data-[highlighted]:outline-none
+      {/* This 2px padding is there to fix some issues with the font not being correctly centered. */}
+      <span className="col-start-2 pb-[2px]">{children}</span>
 
-        data-[disabled]:pointer-events-none
-        data-[disabled]:opacity-50
-
-        group/item
-      `,
-      className,
-    )}
-    {...props}
-  >
-    {children}
-
-    <ChevronRightIcon className="size-4 hidden group-aria-[haspopup]/item:block" />
-  </MenuPrimitive.Item>
-);
+      <ChevronRightIcon className="size-4 hidden group-aria-[haspopup]/item:block" />
+    </MenuPrimitive.Item>
+  );
+};
 
 const Separator = ({ className, ...props }: MenuPrimitive.Separator.Props) => (
   <MenuPrimitive.Separator

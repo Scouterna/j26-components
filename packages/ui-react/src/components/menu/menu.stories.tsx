@@ -1,4 +1,5 @@
 import type { Meta, Preview } from "@storybook/react";
+import { InfoIcon } from "lucide-react";
 import { Button } from "../button/button.js";
 import * as Menu from "./menu.js";
 
@@ -46,7 +47,9 @@ export const Nested = {
           <Menu.Separator />
 
           <Menu.SubmenuRoot>
-            <Menu.SubmenuTrigger render={<Menu.Item>Submenu</Menu.Item>} />
+            <Menu.SubmenuTrigger
+              render={<Menu.Item icon={<InfoIcon />}>Submenu</Menu.Item>}
+            />
             <Menu.Positioner>
               <Menu.Item>Option 1</Menu.Item>
               <Menu.Item>Option 2</Menu.Item>
