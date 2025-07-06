@@ -82,10 +82,11 @@ function Table<TData>(props: Props<TData>) {
 
   return (
     <>
-      <pre style={{ minHeight: "10rem" }}>
+      <pre className="mb-4 min-h-48">
         {JSON.stringify(
           {
-            columnSizing: table.getState().columnSizing,
+            // columnSizing: table.getState().columnSizing,
+            // columnSizeVars,
           },
           null,
           2,
@@ -93,14 +94,17 @@ function Table<TData>(props: Props<TData>) {
       </pre>
 
       <Card
-        className={cn("p-0 inline-block", className)}
+        className={cn("p-0 inline-block overflow-auto", className)}
         {...otherProps}
         variant="light"
       >
         <table
           style={{
             ...columnSizeVars,
-            width: table.getTotalSize(),
+            width:
+              (table.options.enableColumnResizing ?? true)
+                ? table.getTotalSize()
+                : "100%",
           }}
         >
           <thead className="border-b border-gray-300">
