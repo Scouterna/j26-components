@@ -168,8 +168,7 @@ const Item = ({
     >
       {icon && <span className="flex items-center justify-center">{icon}</span>}
 
-      {/* This 2px padding is there to fix some issues with the font not being correctly centered. */}
-      <span className="col-start-2 pt-[2px]">{children}</span>
+      <span className="col-start-2">{children}</span>
 
       <ChevronRightIcon className="size-4 hidden group-aria-[haspopup]/item:block" />
     </MenuPrimitive.Item>
