@@ -1,3 +1,3 @@
 # Scouterna UI
 
-Read the docs at https://scouterna.github.io/ui
+Read the docs at https://scouterna-ui.netlify.app
