@@ -5,5 +5,7 @@
   html {
     /* Use a bold color to clearly show cases where we've forgotten to set text color. */
     color: #ff00ff;
+
+    @apply font-sans;
   }
 }
