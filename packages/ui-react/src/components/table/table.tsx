@@ -10,7 +10,7 @@ import {
   EllipsisVerticalIcon,
   ListFilterIcon,
 } from "lucide-react";
-import { memo, useMemo } from "react";
+import { memo, useId, useMemo } from "react";
 import { Fragment } from "react/jsx-runtime";
 import { cn } from "../../lib/utils.js";
 import { Button } from "../button/button.js";
@@ -62,18 +62,13 @@ function Table<TData>(props: Props<TData>) {
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="relative p-2 text-left"
+                  className="relative p-2  select-none"
                   style={{
                     width: `calc(var(--header-${header?.id}-size) * 1px)`,
                   }}
                 >
                   <div className="flex justify-between pr-1">
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext(),
-                        )}
+                    <HeaderTitle header={header} />
 
                     <div className="flex gap-0.5">
                       <Button size="tiny-icon" variant="text" color="gray">
@@ -167,6 +162,48 @@ function ResizeHandle({
             : "",
       }}
     />
+  );
+}
+
+// biome-ignore lint/suspicious/noExplicitAny: We don't care about the type here
+function HeaderTitle({ header }: { header: Header<any, any> }) {
+  const sortDescriptionId = useId();
+
+  if (header.isPlaceholder) {
+    return null;
+  }
+
+  const rendered = flexRender(
+    header.column.columnDef.header,
+    header.getContext(),
+  );
+
+  if (!header.column.getCanSort()) {
+    return rendered;
+  }
+
+  return (
+    <>
+      <button
+        type="button"
+        className={cn("flex-1 flex items-center gap-1 cursor-pointer")}
+        onClick={header.column.getToggleSortingHandler()}
+        aria-describedby={sortDescriptionId}
+      >
+        {rendered}
+
+        {header.column.getIsSorted() === "asc" && (
+          <ArrowUpIcon className="size-4" />
+        )}
+        {header.column.getIsSorted() === "desc" && (
+          <ArrowDownIcon className="size-4" />
+        )}
+      </button>
+
+      <p id={sortDescriptionId} hidden>
+        Toggle column sorting
+      </p>
+    </>
   );
 }
 

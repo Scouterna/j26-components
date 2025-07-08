@@ -16,7 +16,7 @@ type Attendee = {
 
 const defaultData: Attendee[] = [
   { firstName: "Alice", lastName: "Smith", role: "scout" },
-  { firstName: "Bob", lastName: "Johnson", role: "leader" },
+  { firstName: "Bob", lastName: "Abraham", role: "leader" },
   { firstName: "Charlie", lastName: "Brown", role: "volunteer" },
 ];
 
@@ -25,13 +25,15 @@ const columnHelper = createColumnHelper<Attendee>();
 const columns = [
   columnHelper.accessor("firstName", {
     header: () => "Förnamn",
+    size: 200,
   }),
   columnHelper.accessor("lastName", {
     header: () => "Efternamn",
-    enableSorting: false,
+    size: 200,
   }),
   columnHelper.accessor("role", {
     header: () => "Roll",
+    enableSorting: false,
     cell: (info) => {
       const role = info.getValue();
       return role.charAt(0).toUpperCase() + role.slice(1);
@@ -58,6 +60,7 @@ function TableTest() {
           {
             // columnSizing: table.getState().columnSizing,
             // columnSizeVars,
+            sort: table.getState().sorting,
           },
           null,
           2,
