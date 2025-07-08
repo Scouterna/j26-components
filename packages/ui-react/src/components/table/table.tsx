@@ -1,3 +1,4 @@
+import { ScrollArea } from "@base-ui-components/react";
 import {
   flexRender,
   type Header,
@@ -48,6 +49,7 @@ function Table<TData>(props: Props<TData>) {
       variant="light"
     >
       <table
+        className="border-separate border-spacing-0"
         style={{
           ...columnSizeVars,
           width:
@@ -56,13 +58,13 @@ function Table<TData>(props: Props<TData>) {
               : "100%",
         }}
       >
-        <thead className="border-b border-gray-300">
+        <thead className="sticky top-0 bg-gray-100">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="relative p-2  select-none"
+                  className="relative p-2 select-none border-b border-gray-300"
                   style={{
                     width: `calc(var(--header-${header?.id}-size) * 1px)`,
                   }}
@@ -118,9 +120,12 @@ function TableBody<TData>({ table }: { table: TanstackTable<TData> }) {
   return (
     <tbody>
       {table.getRowModel().rows.map((row) => (
-        <tr key={row.id} className="not-last:border-b border-gray-300">
+        <tr key={row.id} className="group/row">
           {row.getVisibleCells().map((cell) => (
-            <td key={cell.id} className="text-left px-2 py-1">
+            <td
+              key={cell.id}
+              className="text-left px-2 py-1 group-not-last/row:border-b border-gray-300"
+            >
               {flexRender(cell.column.columnDef.cell, cell.getContext())}
             </td>
           ))}

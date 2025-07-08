@@ -18,6 +18,24 @@ const defaultData: Attendee[] = [
   { firstName: "Alice", lastName: "Smith", role: "scout" },
   { firstName: "Bob", lastName: "Abraham", role: "leader" },
   { firstName: "Charlie", lastName: "Brown", role: "volunteer" },
+  { firstName: "Diana", lastName: "Prince", role: "scout" },
+  { firstName: "Ethan", lastName: "Hunt", role: "leader" },
+  { firstName: "Fiona", lastName: "Apple", role: "volunteer" },
+  { firstName: "George", lastName: "Washington", role: "scout" },
+  { firstName: "Hannah", lastName: "Montana", role: "leader" },
+  { firstName: "Ian", lastName: "Fleming", role: "volunteer" },
+  { firstName: "Julia", lastName: "Roberts", role: "scout" },
+  { firstName: "Kevin", lastName: "Spacey", role: "leader" },
+  { firstName: "Laura", lastName: "Croft", role: "volunteer" },
+  { firstName: "Mike", lastName: "Tyson", role: "scout" },
+  { firstName: "Nina", lastName: "Simone", role: "leader" },
+  { firstName: "Oscar", lastName: "Wilde", role: "volunteer" },
+  { firstName: "Paula", lastName: "Patton", role: "scout" },
+  { firstName: "Quentin", lastName: "Tarantino", role: "leader" },
+  { firstName: "Rachel", lastName: "Green", role: "volunteer" },
+  { firstName: "Sam", lastName: "Smith", role: "scout" },
+  { firstName: "Tina", lastName: "Turner", role: "leader" },
+  { firstName: "Ursula", lastName: "K. Le Guin", role: "volunteer" },
 ];
 
 const columnHelper = createColumnHelper<Attendee>();
@@ -66,7 +84,7 @@ function TableTest() {
           2,
         )}
       </pre>
-      <Table table={table} className="w-full" />
+      <Table table={table} className="w-full max-h-80" />
     </>
   );
 }
