@@ -5,22 +5,17 @@ import { cn } from "../../lib/utils.js";
 
 const Root = <TValue,>({
   children,
-  placeholder,
   ...props
-}: SelectPrimitive.Root.Props<TValue> & {
-  placeholder?: string;
-}) => (
+}: SelectPrimitive.Root.Props<TValue>) => (
   <SelectPrimitive.Root {...props}>
     <Trigger>
-      <Value placeholder={placeholder} />
+      <SelectPrimitive.Value />
     </Trigger>
     <Positioner className="text-gray-dark">{children}</Positioner>
   </SelectPrimitive.Root>
 );
 
 const Group = SelectPrimitive.Group;
-
-const Value = SelectPrimitive.Value;
 
 const Trigger = ({
   className,
@@ -152,4 +147,4 @@ const Separator = ({
   />
 );
 
-export { Root, Group, Value, GroupLabel, Item, Separator };
+export { Root, Group, GroupLabel, Item, Separator };
