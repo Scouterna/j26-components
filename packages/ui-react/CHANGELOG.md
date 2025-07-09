@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/Scouterna/j26-components/compare/ui-react-v0.1.2...ui-react-v0.1.3) (2025-07-09)
+
+
+### Bug Fixes
+
+* broken repo url ([d49949f](https://github.com/Scouterna/j26-components/commit/d49949faf646cc53e82711f9dd8ba80fb477c3ac))
+
 ## [0.1.2](https://github.com/Scouterna/j26-components/compare/ui-react-v0.1.1...ui-react-v0.1.2) (2025-07-09)
 
 
