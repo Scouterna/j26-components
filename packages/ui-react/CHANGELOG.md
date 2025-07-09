@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/Scouterna/j26-components/compare/ui-react-v0.1.0...ui-react-v0.1.1) (2025-07-09)
+
+
+### Bug Fixes
+
+* add missing exports ([0c74bd0](https://github.com/Scouterna/j26-components/commit/0c74bd0f7a1e69f8c37d083ee13af9df3179b1af))
+
 ## [0.1.0](https://github.com/Scouterna/j26-components/compare/ui-react-v0.0.6...ui-react-v0.1.0) (2025-07-09)
 
 
