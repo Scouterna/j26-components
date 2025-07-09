@@ -1,7 +1,10 @@
 export * as Button from "./components/button/button.js";
 export * as Callout from "./components/callout/callout.js";
+export * as Card from "./components/card/card.js";
 export * as Checkbox from "./components/checkbox/checkbox.js";
 export * as Field from "./components/field/field.js";
 export * as Input from "./components/input/input.js";
+export * as Menu from "./components/menu/menu.js";
 export * as Select from "./components/select/select.js";
+export * as Table from "./components/table/table.js";
 export * as Toast from "./components/toast/toast.js";
