@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/Scouterna/j26-components/compare/ui-react-v0.1.1...ui-react-v0.1.2) (2025-07-09)
+
+
+### Bug Fixes
+
+* correct issues with select ([a74add4](https://github.com/Scouterna/j26-components/commit/a74add4c81797a3e39cddbe7690052841078c311))
+
 ## [0.1.1](https://github.com/Scouterna/j26-components/compare/ui-react-v0.1.0...ui-react-v0.1.1) (2025-07-09)
 
 
