@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/Scouterna/j26-components/compare/ui-react-v0.1.3...ui-react-v0.1.4) (2025-07-09)
+
+
+### Bug Fixes
+
+* mark menu as client sided ([8ab4e70](https://github.com/Scouterna/j26-components/commit/8ab4e7014d9517582204f521d9e5b44f2d8ad822))
+
 ## [0.1.3](https://github.com/Scouterna/j26-components/compare/ui-react-v0.1.2...ui-react-v0.1.3) (2025-07-09)
 
 
