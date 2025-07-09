@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.1.0](https://github.com/Scouterna/j26-components/compare/ui-react-v0.0.6...ui-react-v0.1.0) (2025-07-09)
+
+
+### Features
+
+* add callout component ([01340e5](https://github.com/Scouterna/j26-components/commit/01340e5158e6afc5c828b24d22c2cc5c15b8e649))
+* add column header buttons ([0eb4986](https://github.com/Scouterna/j26-components/commit/0eb4986cbfbdde2c9a0c3692daec39eeebdd488c))
+* add menu component ([82662af](https://github.com/Scouterna/j26-components/commit/82662af3d0fc6ad38d80df0087e3138161fb2965))
+* add sorting menu to table ([46fbb83](https://github.com/Scouterna/j26-components/commit/46fbb83f646e51a58fa7f07258e5e3ad3d2fdef3))
+* first take on table component ([1ae0c57](https://github.com/Scouterna/j26-components/commit/1ae0c57128d8da2ee7b8030afbcbdebe80306299))
+* make header titles toggle sort ([126ab46](https://github.com/Scouterna/j26-components/commit/126ab463ce7508f4f0384da2fed7449f7fc079ea))
+
+
+### Bug Fixes
+
+* full width when no resize ([460f83e](https://github.com/Scouterna/j26-components/commit/460f83e35b729e97381b41b65170b3a5721c2d01))
+* migrate button to base-ui ([0585d83](https://github.com/Scouterna/j26-components/commit/0585d83aa1328185a19d2294128af25167e52da0))
+* migrate checkbox to base-ui ([a1c6d82](https://github.com/Scouterna/j26-components/commit/a1c6d82655188bb86a58873f49a5f44ab72c7eaf))
+* migrate input and field to base-ui ([97c94f2](https://github.com/Scouterna/j26-components/commit/97c94f216b39909a24e6c49bcbb1f5c80e2a2af4))
+* migrate select to base-ui ([6e7b7e5](https://github.com/Scouterna/j26-components/commit/6e7b7e5a9616a38515e0a64faf2406225e42a111))
+* remove font hack because of fixed fonts ([15b9d9f](https://github.com/Scouterna/j26-components/commit/15b9d9f39ae9b5d2725dac718b7def93e18ec7ad))
+* remove forwardRef from callout ([2409e81](https://github.com/Scouterna/j26-components/commit/2409e8105376802c9fb73e196fab240dc7000223))
+* use correct font ([c5190be](https://github.com/Scouterna/j26-components/commit/c5190becb4ac83a3221bb023af12938d9f03867b))
+
 ## [0.0.6](https://github.com/Scouterna/ui/compare/ui-react-v0.0.5...ui-react-v0.0.6) (2025-06-03)
 
 
