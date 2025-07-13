@@ -131,6 +131,8 @@ const buttonVariants = cva(
       size: {
         medium: "text-base px-4 h-10 rounded-lg",
         small: "text-sm px-3 h-8 rounded-md",
+        "medium-icon": "text-base size-10 rounded-lg",
+        "small-icon": "text-sm size-8 rounded-md",
         "tiny-icon": "text-sm p-1 size-6 rounded-md",
       },
     },
