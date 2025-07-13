@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/Scouterna/j26-components/compare/ui-react-v0.1.4...ui-react-v0.2.0) (2025-07-13)
+
+
+### Features
+
+* add experimental app waffle component ([116d130](https://github.com/Scouterna/j26-components/commit/116d1303381cc2bd74a43970a983150ddfb4b827))
+
 ## [0.1.4](https://github.com/Scouterna/j26-components/compare/ui-react-v0.1.3...ui-react-v0.1.4) (2025-07-09)
 
 
