@@ -30,21 +30,23 @@ A styled native select component for choosing from a list of options.
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                                                                                                                                        | Type                        | Default     |
-| ---------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ----------- |
-| `disabled` | `disabled` | Whether the select is disabled. Disabled selects are not editable, excluded from tab order and are not validated.                                                                                  | `boolean`                   | `false`     |
-| `name`     | `name`     |                                                                                                                                                                                                    | `string`                    | `undefined` |
-| `validate` | --         | Custom validation function run on top of the implicit validation performed by the browser. Return a string with the validation message to mark the select as invalid, or null to mark it as valid. | `(value: string) => string` | `undefined` |
-| `value`    | `value`    | Value of the select element, in case you want to control it yourself.                                                                                                                              | `string`                    | `""`        |
+| Property   | Attribute  | Description                                                                                                                                                                                       | Type                        | Default     |
+| ---------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ----------- |
+| `disabled` | `disabled` | Whether the select is disabled. Disabled selects are not editable, excluded from tab order and are not validated.                                                                                 | `boolean`                   | `false`     |
+| `name`     | `name`     |                                                                                                                                                                                                   | `string`                    | `undefined` |
+| `validate` | --         | Custom validation function run on top of the implicit validation performed by the browser. Return a string with the validation message to mark the input as invalid, or null to mark it as valid. | `(value: string) => string` | `undefined` |
+| `value`    | `value`    | Value of the select element, in case you want to control it yourself.                                                                                                                             | `string`                    | `""`        |
 
 
 ## Events
 
-| Event              | Description                                     | Type                                                          |
-| ------------------ | ----------------------------------------------- | ------------------------------------------------------------- |
-| `_scoutFieldId`    | Internal event used for form field association. | `CustomEvent<string>`                                         |
-| `scoutBlur`        |                                                 | `CustomEvent<void>`                                           |
-| `scoutInputChange` |                                                 | `CustomEvent<{ value: string; element: HTMLSelectElement; }>` |
+| Event             | Description                                     | Type                                                    |
+| ----------------- | ----------------------------------------------- | ------------------------------------------------------- |
+| `_scoutFieldId`   | Internal event used for form field association. | `CustomEvent<string>`                                   |
+| `_scoutInvalid`   | Internal event used for form field validation.  | `CustomEvent<void>`                                     |
+| `_scoutValidate`  | Internal event used for form field validation.  | `CustomEvent<{ element: HTMLElement; }>`                |
+| `scoutBlur`       |                                                 | `CustomEvent<void>`                                     |
+| `scoutInputChnge` |                                                 | `CustomEvent<{ value: string; element: HTMLElement; }>` |
 
 
 ----------------------------------------------

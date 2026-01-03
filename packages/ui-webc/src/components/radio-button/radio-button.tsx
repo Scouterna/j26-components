@@ -1,18 +1,23 @@
 import {
   Component,
+  type ComponentInterface,
   Event,
   type EventEmitter,
   h,
+  Mixin,
   Prop,
-  State,
 } from "@stencil/core";
+import { inputMixin } from "../../mixins/inputMixin";
 
 @Component({
   tag: "scout-radio-button",
   styleUrl: "radio-button.css",
   scoped: true,
 })
-export class ScoutRadioButton {
+export class ScoutRadioButton
+  extends Mixin(inputMixin)
+  implements ComponentInterface
+{
   @Prop() checked: boolean = false;
 
   @Prop() disabled: boolean = false;
@@ -28,21 +33,10 @@ export class ScoutRadioButton {
 
   @Prop() name: string;
 
-  @State() ariaId: string;
-
   @Event() scoutChecked: EventEmitter<{
     checked: boolean;
     element: HTMLInputElement;
   }>;
-  /**
-   * Internal event used for form field association.
-   */
-  @Event() _scoutFieldId: EventEmitter<string>;
-
-  componentWillLoad(): Promise<void> | void {
-    this.ariaId = `_${Math.random().toString(36).substring(2, 9)}`;
-    this._scoutFieldId.emit(this.ariaId);
-  }
 
   onChange(event: Event) {
     const radio = event.target as HTMLInputElement;
@@ -58,6 +52,7 @@ export class ScoutRadioButton {
     return (
       <Tag>
         <input
+          ref={(el) => this.setInputRef(el)}
           id={this.ariaId}
           type="radio"
           value={this.value}
@@ -67,7 +62,12 @@ export class ScoutRadioButton {
           aria-disabled={this.disabled}
           disabled={this.disabled}
           checked={this.checked}
-          onChange={(event) => this.onChange(event)}
+          onChange={(event) => {
+            this.onInput();
+            this.onChange(event);
+          }}
+          onBlur={() => this.onBlur()}
+          onInvalid={() => this.onInvalid()}
         />
         {this.label}
       </Tag>
