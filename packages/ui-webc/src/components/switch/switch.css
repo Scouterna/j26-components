@@ -1,11 +1,11 @@
 .switch {
-  width: var(--spacing-12);
+  width: var(--spacing-10);
   height: var(--spacing-6);
   appearance: none;
   -webkit-appearance: none;
   border-radius: var(--spacing-8);
   background-color: var(--color-text-brand-inverse);
-  border: 1px solid var(--color-gray-300);
+  border: 2px solid var(--color-gray-300);
   position: relative;
   display: flex;
   align-content: center;
@@ -14,7 +14,8 @@
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
   cursor: pointer;
-  --switch-ball-size: calc((var(--spacing-6) - var(--spacing-1) / 2) + 1px);
+  --switch-ball-padding: calc(var(--spacing-1) / 4);
+  --switch-ball-size: calc(var(--spacing-5) - var(--switch-ball-padding) * 2);
 }
 
 .switch:hover {
@@ -42,15 +43,15 @@
   height: var(--switch-ball-size);
   border-radius: 50%;
   position: absolute;
-  left: -1px;
-  right: 0;
+  top: var(--switch-ball-padding);
+  left: var(--switch-ball-padding);
   transition-duration: 0.3s;
   transition-property: left, right;
 }
 .switch:checked::before {
   content: "";
   background-color: var(--color-background-brand-base);
-  left: calc(100% - calc(var(--spacing-6) - var(--spacing-1) / 2) + 1px);
+  left: calc(100% - calc(var(--switch-ball-size) + var(--switch-ball-padding)));
 }
 
 .switch:disabled {
