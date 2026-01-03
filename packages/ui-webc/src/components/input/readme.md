@@ -24,7 +24,7 @@
 | `_scoutInvalid`   | Internal event used for form field validation.  | `CustomEvent<void>`                                     |
 | `_scoutValidate`  | Internal event used for form field validation.  | `CustomEvent<{ element: HTMLElement; }>`                |
 | `scoutBlur`       |                                                 | `CustomEvent<void>`                                     |
-| `scoutInputChnge` |                                                 | `CustomEvent<{ value: string; element: HTMLElement; }>` |
+| `scoutInputChange` |                                                 | `CustomEvent<{ value: string; element: HTMLElement; }>` |
 
 
 ----------------------------------------------

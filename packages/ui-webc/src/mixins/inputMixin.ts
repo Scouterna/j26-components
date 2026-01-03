@@ -15,7 +15,7 @@ export const inputMixin = <B extends MixedInCtor>(Base: B) => {
      */
     @Prop() validate?: (value: string) => string | null;
 
-    @Event() scoutInputChnge: EventEmitter<{
+    @Event() scoutInputChange: EventEmitter<{
       value: string;
       element: HTMLElement;
     }>;
