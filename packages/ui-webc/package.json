@@ -34,7 +34,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Scouterna/j26-components.git"
+    "url": "https://github.com/Scouterna/j26-components.git",
+    "directory": "packages/ui-webc"
   },
   "files": [
     "dist/",

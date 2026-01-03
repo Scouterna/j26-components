@@ -1,0 +1,28 @@
+{
+  "name": "@scouterna/tailwind-theme",
+  "version": "0.0.1",
+  "description": "Scouterna Design System Tailwind CSS Theme",
+  "main": "theme.css",
+  "module": "theme.css",
+  "files": [
+    "theme.css"
+  ],
+  "exports": {
+    ".": {
+      "import": "./theme.css",
+      "default": "./theme.css"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Scouterna/j26-components.git",
+    "directory": "packages/tailwind-theme"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.24.0",
+  "dependencies": {
+    "@scouterna/design-tokens": "workspace:*"
+  }
+}

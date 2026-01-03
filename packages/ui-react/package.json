@@ -10,7 +10,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Scouterna/j26-components.git"
+    "url": "https://github.com/Scouterna/j26-components.git",
+    "directory": "packages/ui-react"
   },
   "scripts": {
     "build": "tsc --outDir ./dist",
@@ -18,7 +19,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "packageManager": "pnpm@10.24.0",
   "dependencies": {
     "@stencil/react-output-target": "^1.2.0",

@@ -1,5 +1,6 @@
 {
   "files.associations": {
+    "**/packages/tailwind-theme/**/*.css": "tailwindcss",
     "*.css": "css" // Avoid CSS files being detected as Tailwind-flavored CSS
   },
   "editor.defaultFormatter": "biomejs.biome"

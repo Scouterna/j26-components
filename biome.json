@@ -55,6 +55,14 @@
           }
         }
       }
+    },
+    {
+      "includes": ["packages/tailwind-theme/**/*.css"],
+      "css": {
+        "parser": {
+          "tailwindDirectives": true
+        }
+      }
     }
   ]
 }
