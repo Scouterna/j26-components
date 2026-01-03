@@ -30,11 +30,6 @@ export class ScoutSelect
 
   @Prop() name: string;
 
-  componentWillLoad(): Promise<void> | void {
-    this.ariaId = `_${Math.random().toString(36).substring(2, 9)}`;
-    this._scoutFieldId.emit(this.ariaId);
-  }
-
   render() {
     return (
       <div class="select-wrapper">
