@@ -1,11 +1,13 @@
 import {
   Component,
+  type ComponentInterface,
   Event,
   type EventEmitter,
   h,
+  Mixin,
   Prop,
-  State,
 } from "@stencil/core";
+import { inputMixin } from "../../mixins/inputMixin";
 
 @Component({
   tag: "scout-switch",
@@ -14,7 +16,10 @@ import {
     delegatesFocus: true,
   },
 })
-export class ScoutSwitch {
+export class ScoutSwitch
+  extends Mixin(inputMixin)
+  implements ComponentInterface
+{
   /**
    * Indicates whether the switch is toggled on or off.
    */
@@ -29,28 +34,17 @@ export class ScoutSwitch {
 
   @Prop() label: string;
 
-  @State() ariaId: string;
-
-  @Event() scoutSwitchToggled: EventEmitter<{
-    toggled: boolean;
+  @Event() scoutChecked: EventEmitter<{
+    checked: boolean;
     element: HTMLInputElement;
   }>;
-  /**
-   * Internal event used for form field association.
-   */
-  @Event() _scoutFieldId: EventEmitter<string>;
 
-  componentWillLoad(): Promise<void> | void {
-    this.ariaId = `_${Math.random().toString(36).substring(2, 9)}`;
-    this._scoutFieldId.emit(this.ariaId);
-  }
+  onChange(event: Event) {
+    const checkbox = event.target as HTMLInputElement;
 
-  onClick(event: Event) {
-    const switchElement = event.target as HTMLInputElement;
-
-    this.scoutSwitchToggled.emit({
-      toggled: switchElement.checked,
-      element: switchElement,
+    this.scoutChecked.emit({
+      checked: checkbox.checked,
+      element: checkbox,
     });
   }
 
@@ -61,14 +55,20 @@ export class ScoutSwitch {
         {this.label}
         <span class="inlineDivider"></span>
         <input
-          class="switch"
-          onChange={(event) => this.onClick(event)}
-          type="checkbox"
+          ref={(el) => this.setInputRef(el)}
           id={this.ariaId}
+          type="checkbox"
+          class="switch"
           aria-labelledby={this.ariaLabelledby}
           aria-disabled={this.disabled}
           disabled={this.disabled}
           checked={this.toggled}
+          onChange={(event) => {
+            this.onInput();
+            this.onChange(event);
+          }}
+          onBlur={() => this.onBlur()}
+          onInvalid={() => this.onInvalid()}
         />
       </Tag>
     );
