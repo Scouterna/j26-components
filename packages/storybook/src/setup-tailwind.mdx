@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Setup - Tailwind CSS" />
+
+# Tailwind CSS setup guide
+
+We provide a Tailwind CSS 4 theme that you can use to access colors, typography,
+spacing, and other design tokens defined in our design system. The theme also
+removes Tailwind's default tokens so that you don't accidentally use them.
+
+## Install the package
+
+To use the theme, first install the `@scouterna/tailwind-theme` package. It can
+be installed as a development dependency since it's only needed during build
+time.
+
+```bash
+pnpm install -D @scouterna/tailwind-theme
+```
+
+You also need to load the Source Sans 3 font under the name `"Source Sans 3
+Variable"`. We recommend you get it through Fontsource:
+
+```bash
+pnpm install @fontsource-variable/source-sans-3
+```
+
+## Usage
+
+In your style file where you import Tailwind CSS you must:
+- Import our Tailwind theme.
+- Import the Source Sans 3 font.
+- Set the correct defaults on the body element.
+
+This is how your style file could look like:
+
+```css
+@import "tailwindcss";
+@import "@scouterna/tailwind-theme";
+
+@import "@fontsource-variable/source-sans-3";
+
+body {
+  font-family: "Source Sans 3 Variable", sans-serif;
+  font-size: var(--text-body-base);
+  line-height: 1.5;
+  color: var(--color-text-base);
+}
+```
