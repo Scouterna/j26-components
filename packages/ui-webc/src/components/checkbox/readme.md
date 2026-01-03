@@ -3,6 +3,13 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The checkbox component is used to let users select one or more options from a
+set. For toggling a single option, consider using the Switch component
+instead. When used in a form, make sure to wrap it in a Field component to
+display a label, help text, and error messages.
+
 ## Properties
 
 | Property         | Attribute         | Description                                                                                                                                                                                       | Type                        | Default     |

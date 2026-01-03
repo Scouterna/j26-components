@@ -9,6 +9,11 @@ import {
 } from "@stencil/core";
 import { inputMixin } from "../../mixins/inputMixin";
 
+/**
+ * The radio button component is used to let users select one option from a set.
+ * When used in a form, make sure to wrap it in a Field component to display a
+ * label, help text, and error messages.
+ */
 @Component({
   tag: "scout-radio-button",
   styleUrl: "radio-button.css",

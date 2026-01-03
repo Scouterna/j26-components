@@ -3,6 +3,12 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The switch component is used to toggle between two states, on and off.
+Behaves like a checkbox. When used in a form, make sure to wrap it in a Field
+component to display a label, help text, and error messages.
+
 ## Properties
 
 | Property         | Attribute         | Description                                                                                                                                                                                       | Type                        | Default     |

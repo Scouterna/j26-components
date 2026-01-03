@@ -3,6 +3,13 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The input component is a basic text input field that can be used to capture
+user input. It supports various types and input modes for different use
+cases. When used in a form, make sure to wrap it in a Field component to
+display a label, help text, and error messages.
+
 ## Properties
 
 | Property    | Attribute   | Description                                                                                                                                                                                                  | Type                                                                                                 | Default     |

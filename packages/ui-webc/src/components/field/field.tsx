@@ -1,5 +1,10 @@
 import { Component, Element, h, Listen, Prop, State } from "@stencil/core";
 
+/**
+ * The field component is used to wrap form fields with a label, help text, and
+ * error messages. It automatically captures validation events from its child
+ * input components and displays error messages accordingly.
+ */
 @Component({
   tag: "scout-field",
   styleUrl: "field.css",

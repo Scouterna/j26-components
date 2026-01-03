@@ -3,7 +3,9 @@ import { Component, Event, type EventEmitter, h, Prop } from "@stencil/core";
 export type Variant = "primary" | "outlined" | "text" | "caution" | "danger";
 
 /**
- * A simple button component.
+ * A button component that can be used either as a normal button or as a link.
+ * Will render a `<button>` element when the `type` is set to "button",
+ * "submit", or "reset", and an `<a>` element when the `type` is set to "link".
  */
 @Component({
   tag: "scout-button",

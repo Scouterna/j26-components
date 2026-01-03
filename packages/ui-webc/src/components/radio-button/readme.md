@@ -3,6 +3,12 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The radio button component is used to let users select one option from a set.
+When used in a form, make sure to wrap it in a Field component to display a
+label, help text, and error messages.
+
 ## Properties
 
 | Property         | Attribute         | Description                                                                                                                                                                                       | Type                        | Default     |

@@ -8,6 +8,11 @@ import {
 import chevronIcon from "@tabler/icons/outline/chevron-down.svg";
 import { inputMixin } from "../../mixins/inputMixin";
 
+/**
+ * The select component is a dropdown menu that allows users to select one
+ * option from a list. When used in a form, make sure to wrap it in a Field
+ * component to display a label, help text, and error messages.
+ */
 @Component({
   tag: "scout-select",
   styleUrl: "select.css",

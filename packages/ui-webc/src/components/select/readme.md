@@ -28,6 +28,12 @@ A styled native select component for choosing from a list of options.
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The select component is a dropdown menu that allows users to select one
+option from a list. When used in a form, make sure to wrap it in a Field
+component to display a label, help text, and error messages.
+
 ## Properties
 
 | Property   | Attribute  | Description                                                                                                                                                                                       | Type                        | Default     |

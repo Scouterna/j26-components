@@ -3,6 +3,12 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The field component is used to wrap form fields with a label, help text, and
+error messages. It automatically captures validation events from its child
+input components and displays error messages accordingly.
+
 ## Properties
 
 | Property             | Attribute   | Description                      | Type     | Default     |

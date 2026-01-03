@@ -10,6 +10,12 @@ import {
 import checkIcon from "@tabler/icons/outline/check.svg";
 import { inputMixin } from "../../mixins/inputMixin";
 
+/**
+ * The checkbox component is used to let users select one or more options from a
+ * set. For toggling a single option, consider using the Switch component
+ * instead. When used in a form, make sure to wrap it in a Field component to
+ * display a label, help text, and error messages.
+ */
 @Component({
   tag: "scout-checkbox",
   styleUrl: "checkbox.css",
