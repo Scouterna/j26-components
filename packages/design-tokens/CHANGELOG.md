@@ -1,5 +1,11 @@
 # @scouterna/design-tokens
 
+## 0.0.4
+
+### Patch Changes
+
+- [#84](https://github.com/Scouterna/j26-components/pull/84) [`a578b94`](https://github.com/Scouterna/j26-components/commit/a578b941d8ceb67ff2e5b9e6f70fcc16beb2464c) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Fix things that didn't work properly in scoutin.
+
 ## 0.0.3
 
 ### Patch Changes
