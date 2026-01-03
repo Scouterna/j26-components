@@ -100,7 +100,7 @@ Input-like components (checkbox, radio-button, select, input) follow this patter
 - Must have `value` prop
 - Must emit `scoutChecked` or `scoutInputChange` events with `{ checked/value, element }` payload
 - Must support `disabled` prop
-- Must emit internal `_fieldId` event for field association
+- Must emit internal `_scoutFieldId` event for field association
 
 ## Testing
 

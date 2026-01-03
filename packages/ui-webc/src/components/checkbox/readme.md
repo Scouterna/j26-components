@@ -17,10 +17,10 @@
 
 ## Events
 
-| Event          | Description                                     | Type                                                            |
-| -------------- | ----------------------------------------------- | --------------------------------------------------------------- |
-| `_fieldId`     | Internal event used for form field association. | `CustomEvent<string>`                                           |
-| `scoutChecked` |                                                 | `CustomEvent<{ checked: boolean; element: HTMLInputElement; }>` |
+| Event           | Description                                     | Type                                                            |
+| --------------- | ----------------------------------------------- | --------------------------------------------------------------- |
+| `_scoutFieldId` | Internal event used for form field association. | `CustomEvent<string>`                                           |
+| `scoutChecked`  |                                                 | `CustomEvent<{ checked: boolean; element: HTMLInputElement; }>` |
 
 
 ## Dependencies

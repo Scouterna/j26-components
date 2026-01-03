@@ -1,13 +1,5 @@
 import { Component, Element, h, Listen, Prop, State } from "@stencil/core";
 
-type ValidatableElement =
-  | HTMLButtonElement
-  | HTMLFieldSetElement
-  | HTMLInputElement
-  | HTMLOutputElement
-  | HTMLSelectElement
-  | HTMLTextAreaElement;
-
 @Component({
   tag: "scout-field",
   styleUrl: "field.css",
@@ -30,17 +22,21 @@ export class ScoutField {
 
   @Element() hostElement!: HTMLElement;
 
-  @Listen("_fieldId")
+  @Listen("_scoutFieldId")
   catchFieldId(event: CustomEvent<string>) {
     event.stopPropagation();
     this.inputId = event.detail;
   }
 
-  @Listen("scoutInputChange")
-  handleInputChange(
+  @Listen("_scoutValidate")
+  handleValidation(
     event: CustomEvent<{
-      value: string;
-      element: ValidatableElement;
+      element:
+        | HTMLButtonElement
+        | HTMLInputElement
+        | HTMLOutputElement
+        | HTMLSelectElement
+        | HTMLTextAreaElement;
     }>,
   ) {
     const { element } = event.detail;
@@ -54,7 +50,8 @@ export class ScoutField {
   }
 
   @Listen("scoutBlur")
-  handleValidationBlur() {
+  @Listen("_scoutInvalid")
+  showError() {
     this.errorHidden = false;
   }
 

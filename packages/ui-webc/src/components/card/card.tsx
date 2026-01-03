@@ -12,6 +12,10 @@ import { Component, h } from "@stencil/core";
 })
 export class ScoutCard {
   render() {
-    return <slot />;
+    return (
+      <div class="card">
+        <slot />
+      </div>
+    );
   }
 }
