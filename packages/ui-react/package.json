@@ -1,6 +1,6 @@
 {
   "name": "@scouterna/ui-react",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Scouterna Design System React Components",
   "main": "dist/index.js",
   "module": "dist/index.js",
