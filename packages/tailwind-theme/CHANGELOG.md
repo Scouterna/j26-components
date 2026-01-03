@@ -1,5 +1,11 @@
 # @scouterna/tailwind-theme
 
+## 0.0.4
+
+### Patch Changes
+
+- [`165d4c7`](https://github.com/Scouterna/j26-components/commit/165d4c7b0f9adf1a96922835107d140c83a1b68c) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Don't include fonts or body styles.
+
 ## 0.0.3
 
 ### Patch Changes
