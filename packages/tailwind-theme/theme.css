@@ -1,12 +1,4 @@
-@import "@fontsource-variable/source-sans-3";
 @import "@scouterna/design-tokens/tokens.css";
-
-body {
-  font-family: "Source Sans 3 Variable", sans-serif;
-  font-size: var(--text-body-base);
-  line-height: 1.5;
-  color: var(--color-text-base);
-}
 
 @theme {
   --text-*: initial;
