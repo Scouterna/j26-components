@@ -1,3 +1,7 @@
+:host {
+  display: inline-block;
+}
+
 .button {
   flex: 1;
   display: inline-flex;
