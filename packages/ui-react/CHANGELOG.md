@@ -1,5 +1,14 @@
 # @scouterna/ui-react
 
+## 2.2.3
+
+### Patch Changes
+
+- [`eff875e`](https://github.com/Scouterna/j26-components/commit/eff875ef8061f66d283fbeb3e2855acb4eba528a) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Add Tailwind theme
+
+- Updated dependencies [[`eff875e`](https://github.com/Scouterna/j26-components/commit/eff875ef8061f66d283fbeb3e2855acb4eba528a), [`2e106c3`](https://github.com/Scouterna/j26-components/commit/2e106c3bb2512128e3930fe8b729e5f5dd1b96e0)]:
+  - @scouterna/ui-webc@2.2.3
+
 ## 2.2.2
 
 ### Patch Changes
