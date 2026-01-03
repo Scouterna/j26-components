@@ -18,11 +18,13 @@
 
 ## Events
 
-| Event              | Description                                     | Type                                                         |
-| ------------------ | ----------------------------------------------- | ------------------------------------------------------------ |
-| `_fieldId`         | Internal event used for form field association. | `CustomEvent<string>`                                        |
-| `scoutBlur`        |                                                 | `CustomEvent<void>`                                          |
-| `scoutInputChange` |                                                 | `CustomEvent<{ value: string; element: HTMLInputElement; }>` |
+| Event             | Description                                     | Type                                                    |
+| ----------------- | ----------------------------------------------- | ------------------------------------------------------- |
+| `_scoutFieldId`   | Internal event used for form field association. | `CustomEvent<string>`                                   |
+| `_scoutInvalid`   | Internal event used for form field validation.  | `CustomEvent<void>`                                     |
+| `_scoutValidate`  | Internal event used for form field validation.  | `CustomEvent<{ element: HTMLElement; }>`                |
+| `scoutBlur`       |                                                 | `CustomEvent<void>`                                     |
+| `scoutInputChnge` |                                                 | `CustomEvent<{ value: string; element: HTMLElement; }>` |
 
 
 ----------------------------------------------

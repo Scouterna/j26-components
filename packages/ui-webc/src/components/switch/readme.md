@@ -17,7 +17,7 @@
 
 | Event                | Description                                     | Type                                                            |
 | -------------------- | ----------------------------------------------- | --------------------------------------------------------------- |
-| `_fieldId`           | Internal event used for form field association. | `CustomEvent<string>`                                           |
+| `_scoutFieldId`      | Internal event used for form field association. | `CustomEvent<string>`                                           |
 | `scoutSwitchToggled` |                                                 | `CustomEvent<{ toggled: boolean; element: HTMLInputElement; }>` |
 
 

@@ -37,11 +37,11 @@ export class ScoutRadioButton {
   /**
    * Internal event used for form field association.
    */
-  @Event() _fieldId: EventEmitter<string>;
+  @Event() _scoutFieldId: EventEmitter<string>;
 
   componentWillLoad(): Promise<void> | void {
     this.ariaId = `_${Math.random().toString(36).substring(2, 9)}`;
-    this._fieldId.emit(this.ariaId);
+    this._scoutFieldId.emit(this.ariaId);
   }
 
   onChange(event: Event) {

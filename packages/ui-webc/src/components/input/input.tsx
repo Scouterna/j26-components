@@ -1,12 +1,11 @@
 import {
   Component,
   type ComponentInterface,
-  Event,
-  type EventEmitter,
   h,
+  Mixin,
   Prop,
-  State,
 } from "@stencil/core";
+import { inputMixin } from "../../mixins/inputMixin";
 
 export type InputType =
   | "text"
@@ -35,7 +34,10 @@ export type InputMode =
   styleUrl: "input.css",
   scoped: true,
 })
-export class ScoutInput implements ComponentInterface {
+export class ScoutInput
+  extends Mixin(inputMixin)
+  implements ComponentInterface
+{
   /**
    * Type of input element. If you need a number input, read the accessibility
    * section of this MDN article first:
@@ -66,48 +68,10 @@ export class ScoutInput implements ComponentInterface {
    */
   @Prop() disabled: boolean = false;
 
-  /**
-   * Custom validation function run on top of the implicit validation performed
-   * by the browser. Return a string with the validation message to mark the
-   * input as invalid, or null to mark it as valid.
-   */
-  @Prop() validate?: (value: string) => string | null;
-
-  @Event() scoutInputChange: EventEmitter<{
-    value: string;
-    element: HTMLInputElement;
-  }>;
-  @Event() scoutBlur: EventEmitter<void>;
-
-  /**
-   * Internal event used for form field association.
-   */
-  @Event() _fieldId: EventEmitter<string>;
-
-  @State() ariaId: string;
-
-  componentWillLoad(): Promise<void> | void {
-    this.ariaId = `_${Math.random().toString(36).substring(2, 9)}`;
-    this._fieldId.emit(this.ariaId);
-  }
-
-  onInput(event: InputEvent) {
-    const input = event.target as HTMLInputElement;
-
-    if (this.validate) {
-      const validationMessage = this.validate(input.value);
-      input.setCustomValidity(validationMessage ?? "");
-    }
-
-    this.scoutInputChange.emit({
-      value: input.value,
-      element: input,
-    });
-  }
-
   render() {
     return (
       <input
+        ref={(el) => this.setInputRef(el)}
         id={this.ariaId}
         type={this.type}
         name={this.name}
@@ -116,8 +80,9 @@ export class ScoutInput implements ComponentInterface {
         class="input"
         value={this.value}
         disabled={this.disabled}
-        onInput={(e) => this.onInput(e)}
-        onBlur={() => this.scoutBlur.emit()}
+        onInput={() => this.onInput()}
+        onBlur={() => this.onBlur()}
+        onInvalid={() => this.onInvalid()}
       />
     );
   }
