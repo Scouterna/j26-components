@@ -18,6 +18,18 @@ export const BasicExample = meta.story({
   render: (args) => <ScoutInput {...args} />,
 });
 
+export const Large = BasicExample.extend({
+  args: {
+    size: "large",
+  },
+});
+
+export const Elevated = BasicExample.extend({
+  args: {
+    variant: "elevated",
+  },
+});
+
 export const Disabled = BasicExample.extend({
   args: {
     disabled: true,

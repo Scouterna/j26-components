@@ -1,117 +1,119 @@
-:host {
+scout-button {
   display: inline-block;
-}
-
-.button {
-  flex: 1;
-  display: inline-flex;
   height: var(--spacing-10);
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-3);
-  padding: 0 var(--spacing-4);
-  font: var(--type-body-base);
-  border-radius: var(--spacing-2);
-  border: 1px solid transparent;
-  cursor: pointer;
-  text-decoration: none;
-}
 
-.icon {
-  width: var(--spacing-5);
-  height: var(--spacing-5);
-  margin: 0 calc(var(--spacing-1) * -1);
-}
-
-.icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.button.icon-only {
-  aspect-ratio: 1 / 1;
-  justify-content: center;
-  padding: 0;
-}
-
-.button.icon-only .icon {
-  margin: 0;
-}
-
-.button.icon-only .content {
-  /* Visually hidden: https://www.a11yproject.com/posts/how-to-hide-content/ */
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.button.primary {
-  background-color: var(--color-background-brand-base);
-  color: var(--color-text-brand-inverse);
-
-  &:hover {
-    background-color: var(--color-background-brand-hovered);
+  .button {
+    flex: 1;
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+    padding: 0 var(--spacing-4);
+    font: var(--type-body-base);
+    border-radius: var(--spacing-2);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
   }
 
-  &:active {
-    background-color: var(--color-background-brand-pressed);
-  }
-}
-
-.button.outlined {
-  background-color: transparent;
-  border-color: var(--color-background-brand-subtle-base);
-  color: var(--color-text-brand-base);
-
-  &:hover {
-    background-color: var(--color-background-brand-subtle-hovered);
+  .icon {
+    width: var(--spacing-5);
+    height: var(--spacing-5);
+    margin: 0 calc(var(--spacing-1) * -1);
   }
 
-  &:active {
-    background-color: var(--color-background-brand-subtle-pressed);
-  }
-}
-
-.button.text {
-  background-color: transparent;
-  border-color: transparent;
-  color: var(--color-text-brand-base);
-
-  &:hover {
-    background-color: var(--color-background-brand-subtle-hovered);
+  .icon svg {
+    width: 100%;
+    height: 100%;
   }
 
-  &:active {
-    background-color: var(--color-background-brand-subtle-pressed);
-  }
-}
-
-.button.caution {
-  background-color: var(--color-background-caution-bold-base);
-  color: var(--color-text-caution-bold-base);
-
-  &:hover {
-    background-color: var(--color-background-caution-bold-hovered);
+  &.icon-only .button {
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    padding: 0;
   }
 
-  &:active {
-    background-color: var(--color-background-caution-bold-pressed);
-  }
-}
-
-.button.danger {
-  background-color: var(--color-background-danger-bold-base);
-  color: var(--color-text-danger-bold-base);
-
-  &:hover {
-    background-color: var(--color-background-danger-bold-hovered);
+  &.icon-only .icon {
+    margin: 0;
   }
 
-  &:active {
-    background-color: var(--color-background-danger-bold-pressed);
+  &.icon-only .content {
+    /* Visually hidden: https://www.a11yproject.com/posts/how-to-hide-content/ */
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .button.primary {
+    background-color: var(--color-background-brand-base);
+    color: var(--color-text-brand-inverse);
+
+    &:hover {
+      background-color: var(--color-background-brand-hovered);
+    }
+
+    &:active {
+      background-color: var(--color-background-brand-pressed);
+    }
+  }
+
+  .button.outlined {
+    background-color: transparent;
+    border-color: var(--color-background-brand-subtle-base);
+    color: var(--color-text-brand-base);
+
+    &:hover {
+      background-color: var(--color-background-brand-subtle-hovered);
+    }
+
+    &:active {
+      background-color: var(--color-background-brand-subtle-pressed);
+    }
+  }
+
+  .button.text {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--color-text-brand-base);
+
+    &:hover {
+      background-color: var(--color-background-brand-subtle-hovered);
+    }
+
+    &:active {
+      background-color: var(--color-background-brand-subtle-pressed);
+    }
+  }
+
+  .button.caution {
+    background-color: var(--color-background-caution-bold-base);
+    color: var(--color-text-caution-bold-base);
+
+    &:hover {
+      background-color: var(--color-background-caution-bold-hovered);
+    }
+
+    &:active {
+      background-color: var(--color-background-caution-bold-pressed);
+    }
+  }
+
+  .button.danger {
+    background-color: var(--color-background-danger-bold-base);
+    color: var(--color-text-danger-bold-base);
+
+    &:hover {
+      background-color: var(--color-background-danger-bold-hovered);
+    }
+
+    &:active {
+      background-color: var(--color-background-danger-bold-pressed);
+    }
   }
 }

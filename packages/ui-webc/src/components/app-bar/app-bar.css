@@ -4,7 +4,8 @@
 }
 
 ::slotted(scout-button) {
-  height: 100%;
+  /* biome-ignore lint/complexity/noImportantStyles: This is a cheeky override, so we're good with it */
+  height: 100% !important;
 }
 
 .container {

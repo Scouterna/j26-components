@@ -56,6 +56,10 @@ export const inputMixin = <B extends MixedInCtor>(Base: B) => {
 
     onInput() {
       this.runValidation();
+      this.scoutInputChange.emit({
+        value: this.inputElement.value,
+        element: this.inputElement,
+      });
     }
 
     onBlur() {

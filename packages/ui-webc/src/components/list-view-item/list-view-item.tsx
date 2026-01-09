@@ -30,6 +30,8 @@ export class ScoutListViewItem {
   @Prop() value?: string;
   @Prop() checked?: boolean;
 
+  @Prop() disabled?: boolean;
+
   @Event() scoutClick: EventEmitter<void>;
 
   render() {
@@ -91,6 +93,7 @@ export class ScoutListViewItem {
           name={this.name}
           value={this.value}
           checked={this.checked}
+          disabled={this.disabled}
         />
       );
     }
@@ -101,6 +104,7 @@ export class ScoutListViewItem {
           name={this.name}
           value={this.value}
           checked={this.checked}
+          disabled={this.disabled}
         />
       );
     }

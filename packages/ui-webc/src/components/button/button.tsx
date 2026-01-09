@@ -1,4 +1,11 @@
-import { Component, Event, type EventEmitter, h, Prop } from "@stencil/core";
+import {
+  Component,
+  Event,
+  type EventEmitter,
+  h,
+  Host,
+  Prop,
+} from "@stencil/core";
 
 export type Variant = "primary" | "outlined" | "text" | "caution" | "danger";
 
@@ -10,7 +17,6 @@ export type Variant = "primary" | "outlined" | "text" | "caution" | "danger";
 @Component({
   tag: "scout-button",
   styleUrl: "button.css",
-  scoped: true,
 })
 export class ScoutButton {
   @Prop() type: "button" | "submit" | "reset" | "link" = "button";
@@ -53,17 +59,19 @@ export class ScoutButton {
     const icon = this.icon && <span class="icon" innerHTML={this.icon} />;
 
     return (
-      <Tag
-        class={`button ${this.variant} ${this.iconOnly ? "icon-only" : ""}`}
-        onClick={() => this.scoutClick.emit()}
-        {...props}
-      >
-        {this.iconPosition === "before" && icon}
-        <span class="content">
-          <slot />
-        </span>
-        {this.iconPosition === "after" && icon}
-      </Tag>
+      <Host class={this.iconOnly ? "icon-only" : ""}>
+        <Tag
+          class={`button ${this.variant}`}
+          onClick={() => this.scoutClick.emit()}
+          {...props}
+        >
+          {this.iconPosition === "before" && icon}
+          <span class="content">
+            <slot />
+          </span>
+          {this.iconPosition === "after" && icon}
+        </Tag>
+      </Host>
     );
   }
 }
