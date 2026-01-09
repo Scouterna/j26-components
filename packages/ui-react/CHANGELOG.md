@@ -1,5 +1,12 @@
 # @scouterna/ui-react
 
+## 2.2.5
+
+### Patch Changes
+
+- Updated dependencies [[`c30d619`](https://github.com/Scouterna/j26-components/commit/c30d619ba408b886f0e1248d80ab11053328c93a)]:
+  - @scouterna/ui-webc@2.2.5
+
 ## 2.2.4
 
 ### Patch Changes

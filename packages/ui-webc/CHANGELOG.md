@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 2.2.5
+
+### Patch Changes
+
+- [`c30d619`](https://github.com/Scouterna/j26-components/commit/c30d619ba408b886f0e1248d80ab11053328c93a) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Various fixes for j26-app
+
 ## 2.2.4
 
 ### Patch Changes
