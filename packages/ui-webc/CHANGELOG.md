@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 2.2.6
+
+### Patch Changes
+
+- [`03baeb7`](https://github.com/Scouterna/j26-components/commit/03baeb7b750a08e277dc4549e92e635281d284d8) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Variable size buttons
+
 ## 2.2.5
 
 ### Patch Changes
