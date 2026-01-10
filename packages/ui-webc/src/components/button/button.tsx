@@ -2,11 +2,12 @@ import {
   Component,
   Event,
   type EventEmitter,
-  h,
   Host,
+  h,
   Prop,
 } from "@stencil/core";
 
+export type Size = "medium" | "large";
 export type Variant = "primary" | "outlined" | "text" | "caution" | "danger";
 
 /**
@@ -24,6 +25,11 @@ export class ScoutButton {
   @Prop() href?: string;
   @Prop() target?: string;
   @Prop() rel?: string;
+
+  /**
+   * Size of the button.
+   */
+  @Prop() size: Size = "medium";
 
   /**
    * The variant primarily affects the color of the button.
@@ -59,7 +65,12 @@ export class ScoutButton {
     const icon = this.icon && <span class="icon" innerHTML={this.icon} />;
 
     return (
-      <Host class={this.iconOnly ? "icon-only" : ""}>
+      <Host
+        // Using data- attributes instead of classes because React fights and
+        // removes them sometimes. Hopefully we can find a proper fix later.
+        data-size={this.size}
+        data-icon-only={this.iconOnly}
+      >
         <Tag
           class={`button ${this.variant}`}
           onClick={() => this.scoutClick.emit()}

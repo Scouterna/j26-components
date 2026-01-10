@@ -20,6 +20,7 @@ Will render a `<button>` element when the `type` is set to "button",
 | `iconOnly`     | `icon-only`     |                                                                               | `boolean`                                                    | `false`      |
 | `iconPosition` | `icon-position` |                                                                               | `"after" \| "before"`                                        | `"after"`    |
 | `rel`          | `rel`           |                                                                               | `string`                                                     | `undefined`  |
+| `size`         | `size`          | Size of the button.                                                           | `"large" \| "medium"`                                        | `"medium"`   |
 | `target`       | `target`        |                                                                               | `string`                                                     | `undefined`  |
 | `type`         | `type`          |                                                                               | `"button" \| "link" \| "reset" \| "submit"`                  | `"button"`   |
 | `variant`      | `variant`       | The variant primarily affects the color of the button.                        | `"caution" \| "danger" \| "outlined" \| "primary" \| "text"` | `"outlined"` |

@@ -8,6 +8,9 @@ import {
 } from "@stencil/core";
 import { inputMixin } from "../../mixins/inputMixin";
 
+export type Size = "medium" | "large";
+export type Variant = "default" | "elevated";
+
 export type InputType =
   | "text"
   | "password"
@@ -50,14 +53,14 @@ export class ScoutInput
    * inputs, such as a top search field on a page, while medium fields are used
    * for regular form inputs.
    */
-  @Prop() size: "medium" | "large" = "medium";
+  @Prop() size: Size = "medium";
 
   /**
    * Visual variant of the input element. Elevated inputs have a shadow to help
    * them stand out from the background and should only be used when absolutely
    * positioned above other content.
    */
-  @Prop() variant: "default" | "elevated" = "default";
+  @Prop() variant: Variant = "default";
 
   /**
    * Type of input element. If you need a number input, read the accessibility
