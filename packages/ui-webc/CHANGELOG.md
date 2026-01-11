@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 2.2.7
+
+### Patch Changes
+
+- [`b58a79a`](https://github.com/Scouterna/j26-components/commit/b58a79ade7acfefd71a24b6c0cae0268434039c2) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Make hover not stick on mobile.
+
 ## 2.2.6
 
 ### Patch Changes
