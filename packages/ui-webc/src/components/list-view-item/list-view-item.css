@@ -16,8 +16,10 @@
   text-decoration: none;
 }
 
-.button:hover {
-  background-color: var(--color-background-brand-subtle-hovered);
+@media (hover: hover) {
+  .button:hover {
+    background-color: var(--color-background-brand-subtle-hovered);
+  }
 }
 
 .prefix-icon,

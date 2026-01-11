@@ -15,8 +15,10 @@
   cursor: pointer;
 }
 
-.button:hover {
-  background-color: var(--color-neutral-50);
+@media (hover: hover) {
+  .button:hover {
+    background-color: var(--color-neutral-50);
+  }
 }
 
 .button.active {

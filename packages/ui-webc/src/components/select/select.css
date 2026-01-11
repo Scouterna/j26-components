@@ -19,8 +19,10 @@
   cursor: pointer;
 }
 
-.select:hover:not(:disabled) {
-  border-color: var(--color-gray-400);
+@media (hover: hover) {
+  .select:hover:not(:disabled) {
+    border-color: var(--color-gray-400);
+  }
 }
 
 .select:focus {

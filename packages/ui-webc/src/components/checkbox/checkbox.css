@@ -12,20 +12,25 @@
   position: relative;
 }
 
-.checkbox:hover {
-  border: 2px solid var(--color-gray-400);
-  box-shadow: inset 0px 0px 5px 5px var(--color-background-brand-subtle-hovered);
-  cursor: pointer;
+@media (hover: hover) {
+  .checkbox:hover {
+    border: 2px solid var(--color-gray-400);
+    box-shadow: inset 0px 0px 5px 5px
+      var(--color-background-brand-subtle-hovered);
+    cursor: pointer;
+  }
 }
 
 .checkbox:active {
   background-color: var(--color-background-brand-subtle-pressed);
 }
 
-.checkbox:checked:hover {
-  background-color: var(--color-background-brand-hovered);
-  border-color: var(--color-background-brand-hovered);
-  box-shadow: none;
+@media (hover: hover) {
+  .checkbox:checked:hover {
+    background-color: var(--color-background-brand-hovered);
+    border-color: var(--color-background-brand-hovered);
+    box-shadow: none;
+  }
 }
 
 .checkbox:checked {

@@ -7,11 +7,15 @@ button {
   color: var(--color-text-brand-base);
   text-decoration: none;
 }
-a:hover,
-button:hover {
-  text-decoration: underline;
-  color: var(--color-background-brand-hover);
+
+@media (hover: hover) {
+  a:hover,
+  button:hover {
+    text-decoration: underline;
+    color: var(--color-background-brand-hover);
+  }
 }
+
 a:active,
 button:active {
   color: var(--color-background-brand-pressed);

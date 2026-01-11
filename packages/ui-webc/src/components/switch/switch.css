@@ -18,10 +18,12 @@
   --switch-ball-size: calc(var(--spacing-5) - var(--switch-ball-padding) * 2);
 }
 
-.switch:hover {
-  transition-property: none;
-  border-color: var(--color-gray-400);
-  background-color: var(--color-background-brand-subtle-hovered);
+@media (hover: hover) {
+  .switch:hover {
+    transition-property: none;
+    border-color: var(--color-gray-400);
+    background-color: var(--color-background-brand-subtle-hovered);
+  }
 }
 
 .switch:active {
@@ -32,8 +34,10 @@
   border-color: var(--color-background-brand-base);
 }
 
-.switch:hover::before {
-  background-color: var(--color-gray-400);
+@media (hover: hover) {
+  .switch:hover::before {
+    background-color: var(--color-gray-400);
+  }
 }
 
 .switch::before {

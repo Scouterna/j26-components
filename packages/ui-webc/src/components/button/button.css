@@ -64,8 +64,10 @@ scout-button {
     background-color: var(--color-background-brand-base);
     color: var(--color-text-brand-inverse);
 
-    &:hover {
-      background-color: var(--color-background-brand-hovered);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-background-brand-hovered);
+      }
     }
 
     &:active {
@@ -78,8 +80,10 @@ scout-button {
     border-color: var(--color-background-brand-subtle-base);
     color: var(--color-text-brand-base);
 
-    &:hover {
-      background-color: var(--color-background-brand-subtle-hovered);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-background-brand-subtle-hovered);
+      }
     }
 
     &:active {
@@ -92,8 +96,10 @@ scout-button {
     border-color: transparent;
     color: var(--color-text-brand-base);
 
-    &:hover {
-      background-color: var(--color-background-brand-subtle-hovered);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-background-brand-subtle-hovered);
+      }
     }
 
     &:active {
@@ -105,8 +111,10 @@ scout-button {
     background-color: var(--color-background-caution-bold-base);
     color: var(--color-text-caution-bold-base);
 
-    &:hover {
-      background-color: var(--color-background-caution-bold-hovered);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-background-caution-bold-hovered);
+      }
     }
 
     &:active {
@@ -118,8 +126,10 @@ scout-button {
     background-color: var(--color-background-danger-bold-base);
     color: var(--color-text-danger-bold-base);
 
-    &:hover {
-      background-color: var(--color-background-danger-bold-hovered);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-background-danger-bold-hovered);
+      }
     }
 
     &:active {

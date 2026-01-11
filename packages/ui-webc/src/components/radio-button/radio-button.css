@@ -12,23 +12,28 @@
   position: relative;
 }
 
-.radio:hover {
-  border: 2px solid var(--color-gray-400);
-  box-shadow: inset 0px 0px 5px 5px var(--color-background-brand-subtle-hovered);
-  cursor: pointer;
+@media (hover: hover) {
+  .radio:hover {
+    border: 2px solid var(--color-gray-400);
+    box-shadow: inset 0px 0px 5px 5px
+      var(--color-background-brand-subtle-hovered);
+    cursor: pointer;
+  }
 }
 
 .radio:active {
   background-color: var(--color-background-brand-subtle-pressed);
 }
 
-.radio:checked:hover {
-  border-color: var(--color-background-brand-hovered);
-  box-shadow: none;
-}
+@media (hover: hover) {
+  .radio:checked:hover {
+    border-color: var(--color-background-brand-hovered);
+    box-shadow: none;
+  }
 
-.radio:checked:hover::before {
-  background-color: var(--color-background-brand-hovered);
+  .radio:checked:hover::before {
+    background-color: var(--color-background-brand-hovered);
+  }
 }
 
 .radio:checked {
