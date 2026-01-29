@@ -1,5 +1,13 @@
 # @scouterna/ui-webc
 
+## 3.0.0
+
+### Major Changes
+
+- [`1d81444`](https://github.com/Scouterna/j26-components/commit/1d81444b4ae9f96cd8c0323bb2a15403f279239f) Thanks [@scriptcoded](https://github.com/scriptcoded)! - This release changes how validation works for input fields. The `validation`
+  prop has been superseeded by the `scoutValidate` event in conjunction with the
+  `validity` prop on input fields.
+
 ## 2.2.7
 
 ### Patch Changes
