@@ -2,8 +2,11 @@ import type { Config } from "@stencil/core";
 import { reactOutputTarget } from "@stencil/react-output-target";
 import { postcss } from "@stencil-community/postcss";
 import postcssImport from "postcss-import";
-
 import postcssPresetEnv from "postcss-preset-env";
+
+// biome-ignore lint/suspicious/noExplicitAny: We know this config is only loaded during build time.
+const skipMinify = (process as any).env.STENCIL_SKIP_MINIFY === "true";
+
 export const config: Config = {
   namespace: "ui-webc",
   globalStyle: "src/global/global.css",
@@ -22,6 +25,7 @@ export const config: Config = {
     {
       type: "dist-custom-elements",
       externalRuntime: false,
+      minify: !skipMinify,
     },
     {
       type: "docs-readme",

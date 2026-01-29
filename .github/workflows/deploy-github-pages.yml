@@ -30,6 +30,8 @@ jobs:
         run: pnpm install
 
       - name: Build Packages
+        env:
+          STENCIL_SKIP_MINIFY: "true"
         run: pnpm run build
 
       - name: Build Storybook
