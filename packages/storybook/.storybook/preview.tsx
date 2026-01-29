@@ -1,10 +1,21 @@
+import customElements from "@scouterna/ui-webc/dist/custom-elements.json";
 import { setCustomElementsManifest } from "@stencil/storybook-plugin";
 import addonA11y from "@storybook/addon-a11y";
 import addonDocs from "@storybook/addon-docs";
+import {
+  Controls,
+  Description,
+  Heading,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
 import addonVitest from "@storybook/addon-vitest";
 import { definePreview } from "@storybook/react-vite";
 import kebabCase from "lodash.kebabcase";
-import customElements from "../../ui-webc/dist/custom-elements.json";
+// @ts-expect-error React is used in the JSX runtime
+import React from "react";
 
 // This import isn't very nice, but @stencil/storybook-plugin doesn't expose this functionality
 import { parameters } from "../node_modules/@stencil/storybook-plugin/dist/entry-preview-argtypes";
@@ -30,23 +41,43 @@ const getComponentWebcName = (component: unknown): string | null => {
   return null;
 };
 
+const stencilComponentConfiguration = {
+  // Automatically extract argTypes and component descriptions from web components
+  extractArgTypes: (component: unknown) => {
+    const webcName = getComponentWebcName(component);
+    if (!webcName) return null;
+    return parameters.docs.extractArgTypes(webcName);
+  },
+  extractComponentDescription: (component: unknown) => {
+    const webcName = getComponentWebcName(component);
+    if (!webcName) return null;
+    return parameters.docs.extractComponentDescription(webcName);
+  },
+  // biome-ignore lint/suspicious/noExplicitAny: We need to cast becuase these are internal APIs.
+} as any;
+
 export default definePreview({
   addons: [addonDocs(), addonA11y(), addonVitest()],
   parameters: {
     docs: {
-      // Automatically extract argTypes and component descriptions from web components
-      extractArgTypes: (component: unknown) => {
-        const webcName = getComponentWebcName(component);
-        if (!webcName) return null;
-        return parameters.docs.extractArgTypes(webcName);
+      toc: {
+        headingSelector: "h2,h3,h4",
       },
-      extractComponentDescription: (component: unknown) => {
-        const webcName = getComponentWebcName(component);
-        if (!webcName) return null;
-        return parameters.docs.extractComponentDescription(webcName);
-      },
-      // biome-ignore lint/suspicious/noExplicitAny: We need to cast becuase these are internal APIs.
-    } as any,
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+
+          <Heading>Stories</Heading>
+          {/** biome-ignore lint/suspicious/noExplicitAny: Workaround to make Storybook remove the title so we can render it properly */}
+          <Stories title={false as any} />
+        </>
+      ),
+      ...stencilComponentConfiguration,
+    },
     actions: {
       argTypesRegex: "^onScout.*",
     },

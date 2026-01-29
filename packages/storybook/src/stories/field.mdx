@@ -1,0 +1,63 @@
+import {
+  Meta,
+  Controls,
+  Description,
+  Primary,
+  Source,
+  Stories,
+  Subtitle,
+  Title,
+} from '@storybook/addon-docs/blocks';
+
+import * as FieldStories from './field.stories';
+
+<Meta of={FieldStories} />
+
+<Title />
+<Subtitle />
+<Description />
+<Primary />
+<Controls />
+
+## Code Examples
+
+### Validation
+
+You can implement your own validation logic by listening to the `scoutValidate`
+event on the input component inside the `ScoutField`. The validity of the input
+component will be picked up by the field and displayed below the input. In the
+example below, we validate that the input is not empty and set a custom validity
+message if it is.
+
+<Source
+  language="tsx"
+  code={`
+    import { useState } from "react";
+    import { ScoutField, ScoutInput } from "@scouterna/ui-react";
+
+    function MyField() {
+      const [validity, setValidity] = useState("");
+
+      return (
+        <ScoutField
+          name="Name"
+        >
+          <ScoutInput
+            validity={validity}
+            onScoutValidate={(e) => {
+              if (e.detail.value.length < 2) {
+                setValidity("Please enter at least 2 characters.");
+              } else {
+                setValidity("");
+              }
+            }}
+          />
+        </ScoutField>
+      )
+    }
+  `}
+/>
+
+## Stories
+
+<Stories title={false} />

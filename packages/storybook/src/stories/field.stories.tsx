@@ -6,6 +6,7 @@ import {
   ScoutSelect,
   ScoutSwitch,
 } from "@scouterna/ui-react";
+import { useState } from "storybook/internal/preview-api";
 import preview from "#.storybook/preview";
 
 const meta = preview.meta({
@@ -41,18 +42,24 @@ export const WithCustomValidation = WithInput.extend({
   args: {
     helpText: "This field will fail validation if it contains the letter a.",
   },
-  render: (args) => (
-    <ScoutField {...args}>
-      <ScoutInput
-        validate={(value) => {
-          if (value.toLowerCase().includes("a")) {
-            return "Please don't use the letter a.";
-          }
-          return null;
-        }}
-      />
-    </ScoutField>
-  ),
+  render: (args) => {
+    const [validity, setValidity] = useState("");
+
+    return (
+      <ScoutField {...args}>
+        <ScoutInput
+          validity={validity}
+          onScoutValidate={(e) => {
+            if (e.detail.value.toLowerCase().includes("a")) {
+              setValidity("Please don't use the letter a.");
+            } else {
+              setValidity("");
+            }
+          }}
+        />
+      </ScoutField>
+    );
+  },
 });
 
 export const WithCheckbox = WithInput.extend({
@@ -94,28 +101,39 @@ export const InForm = WithInput.extend({
   args: {
     label: "This field is inside a form",
   },
-  render: (args) => (
-    <form
-      noValidate
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "0.5rem",
-        maxWidth: "300px",
-      }}
-      onSubmit={(e) => {
-        e.preventDefault();
-        const valid = e.currentTarget.checkValidity();
-        if (!valid) return;
-        alert("Submitted!");
-      }}
-    >
-      <ScoutField {...args}>
-        <ScoutInput
-          validate={(val) => (val.length < 5 ? "Minimum 5 characters" : null)}
-        />
-      </ScoutField>
-      <ScoutButton type="submit">Submit</ScoutButton>
-    </form>
-  ),
+  render: (args) => {
+    const [validity, setValidity] = useState("");
+
+    return (
+      <form
+        noValidate
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.5rem",
+          maxWidth: "300px",
+        }}
+        onSubmit={(e) => {
+          e.preventDefault();
+          const valid = e.currentTarget.checkValidity();
+          if (!valid) return;
+          alert("Submitted!");
+        }}
+      >
+        <ScoutField {...args}>
+          <ScoutInput
+            validity={validity}
+            onScoutValidate={(e) => {
+              if (e.detail.value.length < 5) {
+                setValidity("Minimum 5 characters.");
+              } else {
+                setValidity("");
+              }
+            }}
+          />
+        </ScoutField>
+        <ScoutButton type="submit">Submit</ScoutButton>
+      </form>
+    );
+  },
 });

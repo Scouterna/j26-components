@@ -33,7 +33,7 @@ export class ScoutField {
     this.inputId = event.detail;
   }
 
-  @Listen("_scoutValidate")
+  @Listen("_scoutValidityChanged")
   handleValidation(
     event: CustomEvent<{
       element:

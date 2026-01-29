@@ -39,6 +39,7 @@ export class ScoutSelect
     return (
       <div class="select-wrapper">
         <select
+          ref={(el) => this.setInputRef(el)}
           id={this.ariaId}
           name={this.name}
           class="select"

@@ -21,20 +21,21 @@ display a label, help text, and error messages.
 | `placeholder` | `placeholder` | Placeholder text should rarely be used as it poses a lot of accessibility issues.                                                                                                                            | `string`                                                                                             | `undefined` |
 | `size`        | `size`        | Size of the input element. Large fields are typically used for prominent inputs, such as a top search field on a page, while medium fields are used for regular form inputs.                                 | `"large" \| "medium"`                                                                                | `"medium"`  |
 | `type`        | `type`        | Type of input element. If you need a number input, read the accessibility section of this MDN article first: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/number#accessibility | `"email" \| "number" \| "password" \| "tel" \| "text" \| "url" \| string & {}`                       | `"text"`    |
-| `validate`    | --            | Custom validation function run on top of the implicit validation performed by the browser. Return a string with the validation message to mark the input as invalid, or null to mark it as valid.            | `(value: string) => string`                                                                          | `undefined` |
+| `validity`    | `validity`    | Custom validation message. If set, the input is considered invalid by the browser, and if wrapped by a field component, the message is displayed. If not set, the input is considered valid.                 | `string`                                                                                             | `undefined` |
 | `value`       | `value`       | Value of the input element, in case you want to control it yourself.                                                                                                                                         | `string`                                                                                             | `""`        |
 | `variant`     | `variant`     | Visual variant of the input element. Elevated inputs have a shadow to help them stand out from the background and should only be used when absolutely positioned above other content.                        | `"default" \| "elevated"`                                                                            | `"default"` |
 
 
 ## Events
 
-| Event              | Description                                     | Type                                                    |
-| ------------------ | ----------------------------------------------- | ------------------------------------------------------- |
-| `_scoutFieldId`    | Internal event used for form field association. | `CustomEvent<string>`                                   |
-| `_scoutInvalid`    | Internal event used for form field validation.  | `CustomEvent<void>`                                     |
-| `_scoutValidate`   | Internal event used for form field validation.  | `CustomEvent<{ element: HTMLElement; }>`                |
-| `scoutBlur`        |                                                 | `CustomEvent<void>`                                     |
-| `scoutInputChange` |                                                 | `CustomEvent<{ value: string; element: HTMLElement; }>` |
+| Event                   | Description                                                                                                                                                                     | Type                                                    |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `_scoutFieldId`         | Internal event used for form field association.                                                                                                                                 | `CustomEvent<string>`                                   |
+| `_scoutInvalid`         | Internal event used for form field validation.                                                                                                                                  | `CustomEvent<void>`                                     |
+| `_scoutValidityChanged` | Internal event used for form field validation.                                                                                                                                  | `CustomEvent<{ element: HTMLElement; }>`                |
+| `scoutBlur`             |                                                                                                                                                                                 | `CustomEvent<void>`                                     |
+| `scoutInputChange`      | Event emitted when the input value changes. If you want to do custom validation, use the `scoutValidate` event instead to ensure forms are blocked by the browser when invalid. | `CustomEvent<{ value: string; element: HTMLElement; }>` |
+| `scoutValidate`         | Event emitted when the input needs to be validated. This is where you implement your custom validation. Set any possible validation message using the `validity` prop.          | `CustomEvent<{ value: string; element: HTMLElement; }>` |
 
 
 ----------------------------------------------
