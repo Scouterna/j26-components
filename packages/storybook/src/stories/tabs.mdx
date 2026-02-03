@@ -1,0 +1,50 @@
+import {
+  Meta,
+  Controls,
+  Description,
+  Primary,
+  Source,
+  Stories,
+  Subtitle,
+  Title,
+} from '@storybook/addon-docs/blocks';
+
+import * as TabsStories from './tabs.stories';
+
+<Meta of={TabsStories} />
+
+<Title />
+<Subtitle />
+<Description />
+<Primary />
+<Controls />
+
+## Code Examples
+
+### Controlling state
+
+You must manage the state of the active tab yourself by listening to the
+`scoutChange` event and updating the `value` prop accordingly.
+
+<Source
+  language="tsx"
+  code={`
+    import { useState } from "react";
+
+    const [activeTab, setActiveTab] = useState(0);
+
+    return (
+      <ScoutTabs
+        value={activeTab}
+        onScoutChange={(e) => setActiveTab(e.detail.value)}
+      >
+        <ScoutTabsTab>Händelser</ScoutTabsTab>
+        <ScoutTabsTab>Information</ScoutTabsTab>
+      </ScoutTabs>
+    );
+  `}
+/>
+
+## Stories
+
+<Stories title={false} />
