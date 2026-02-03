@@ -57,3 +57,4 @@ This project uses [Changesets](https://github.com/changesets/changesets) to mana
 ## Helpful resources
 
 - [Shadow DOM and accessibility: the trouble with ARIA](https://nolanlawson.com/2022/11/28/shadow-dom-and-accessibility-the-trouble-with-aria/)
+- [Shadow DOM and events](https://it.javascript.info/shadow-dom-events)
