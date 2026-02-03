@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 3.1.0
+
+### Minor Changes
+
+- [#95](https://github.com/Scouterna/j26-components/pull/95) [`2b81f4a`](https://github.com/Scouterna/j26-components/commit/2b81f4a1f2cc4a5a2613fd984ed98a69683657aa) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Add tabs component.
+
 ## 3.0.0
 
 ### Major Changes
