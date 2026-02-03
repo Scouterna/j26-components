@@ -1,4 +1,4 @@
-import { Component, h, Prop } from "@stencil/core";
+import { Component, h } from "@stencil/core";
 
 @Component({
   tag: "scout-tabs-tab",
@@ -8,9 +8,6 @@ import { Component, h, Prop } from "@stencil/core";
   },
 })
 export class ScoutTabsTab {
-  @Prop()
-  active: boolean = false;
-
   render() {
     return (
       <button class="button-native" type="button">
