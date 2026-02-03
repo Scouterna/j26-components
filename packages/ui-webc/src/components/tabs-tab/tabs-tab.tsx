@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from "@stencil/core";
+import { Component, h, Prop } from "@stencil/core";
 
 @Component({
   tag: "scout-tabs-tab",
@@ -13,13 +13,11 @@ export class ScoutTabsTab {
 
   render() {
     return (
-      <Host data-active={this.active ? "true" : undefined}>
-        <button class="button-native" type="button">
-          <div class="inner-container">
-            <slot />
-          </div>
-        </button>
-      </Host>
+      <button class="button-native" type="button">
+        <div class="inner-container">
+          <slot />
+        </div>
+      </button>
     );
   }
 }
