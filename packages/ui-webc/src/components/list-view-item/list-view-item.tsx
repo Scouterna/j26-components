@@ -7,7 +7,11 @@ import {
   Prop,
 } from "@stencil/core";
 
+import ChevronRightIcon from "@tabler/icons/outline/chevron-right.svg";
+
 export type ItemType = "button" | "link" | "radio" | "checkbox";
+
+export type ActionType = "chevron" | null;
 
 @Component({
   tag: "scout-list-view-item",
@@ -21,6 +25,13 @@ export class ScoutListViewItem {
   @Prop() primary?: string;
   @Prop() secondary?: string;
   @Prop() type: ItemType = "button";
+
+  /**
+   * The action to display on the right side of the item. For example, a
+   * chevron. This is purely visual and does not affect the behavior of the item
+   * in any way. Not visible when the type is "radio" or "checkbox".
+   */
+  @Prop() action: ActionType = null;
 
   @Prop() href?: string;
   @Prop() target?: string;
@@ -106,6 +117,14 @@ export class ScoutListViewItem {
           checked={this.checked}
           disabled={this.disabled}
         />
+      );
+    }
+
+    if (this.action === "chevron") {
+      return (
+        <div class="suffix-icon">
+          <div class="icon" style={{ "--icon": `url(${ChevronRightIcon})` }} />
+        </div>
       );
     }
 
