@@ -3,3 +3,7 @@ export function format(first?: string, middle?: string, last?: string): string {
     (first || "") + (middle ? ` ${middle}` : "") + (last ? ` ${last}` : "")
   );
 }
+
+export const isMobile = () => {
+  return window.innerWidth <= 768;
+};
