@@ -15,9 +15,14 @@ import {
 export type Size = "small" | "medium";
 
 /**
- * The segmented control component is used to create a segmented interface. It
- * manages the state of which segment is active and displays an indicator under
- * the active segment. Use button elements to define the individual segments.
+ * The segmented control component presents a set of options where exactly one
+ * option is active at a time.
+ *
+ * The component displays an indicator under the selected option and emits a
+ * `scoutChange` event when the user picks a different option, so you can update
+ * `value`.
+ *
+ * Use button elements as the slotted segment options.
  */
 @Component({
   tag: "scout-segmented-control",
