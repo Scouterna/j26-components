@@ -3,5 +3,8 @@
     "**/packages/tailwind-theme/**/*.css": "tailwindcss",
     "*.css": "css" // Avoid CSS files being detected as Tailwind-flavored CSS
   },
-  "editor.defaultFormatter": "biomejs.biome"
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "never"
+  }
 }
