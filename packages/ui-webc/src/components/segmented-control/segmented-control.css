@@ -27,7 +27,7 @@
   height: 100%;
   transition: all 0.2s ease;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 
   &::after {
     content: "";
@@ -53,6 +53,8 @@
   border: none;
   cursor: pointer;
   transition: color 0.15s ease;
+  position: relative;
+  z-index: 1;
 
   &:disabled {
     color: var(--color-text-disabled);

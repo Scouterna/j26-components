@@ -78,11 +78,9 @@ export class ScoutSegmentedControl implements ComponentInterface {
     this.updateChildrenAttributes();
     this.calculateIndicatorSizes();
 
-    // This is a hack and it won't work on slow devices, but in most cases it
-    // prevents the indicator from animating prematurely.
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       this.enableAnimations = true;
-    }, 50);
+    });
   }
 
   getIndicator() {
