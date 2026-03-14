@@ -25,8 +25,6 @@ export const BasicExample = meta.story({
         <button type="button">Alla</button>
         <button type="button">Bokade</button>
       </ScoutSegmentedControl>
-      // <div style={{ display: "flex", width: "20rem", height: "3.5rem" }}>
-      // </div>
     );
   },
 });
