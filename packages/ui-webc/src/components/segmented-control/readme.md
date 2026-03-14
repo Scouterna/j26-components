@@ -1,4 +1,4 @@
-# scout-tabs
+# scout-segmented-control
 
 <!-- Auto Generated Below -->
 
