@@ -55,6 +55,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "iconoir": "^7.11.0",
+    "dom-focus-lock": "^1.1.0",
     "@tabler/icons": "^3.36.1"
   },
   "devDependencies": {

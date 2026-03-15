@@ -1,4 +1,5 @@
 import { ScoutDrawer } from "@scouterna/ui-react";
+import { fn } from "storybook/test";
 import preview from "#.storybook/preview";
 
 const meta = preview.meta({
@@ -13,10 +14,12 @@ export default meta;
 
 export const BasicExample = meta.story({
   args: {
-    open: true,
-    title: "Drawer Title",
-    backButton: true,
-    closeButton: true,
+    open: false,
+    heading: "Drawer Heading",
+    showBackButton: true,
+    showExitButton: true,
+    onBackButtonClicked: fn(),
+    onExitButtonClicked: fn(),
   },
   render: (args) => (
     <div>

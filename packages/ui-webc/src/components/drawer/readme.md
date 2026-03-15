@@ -5,21 +5,24 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                                                               | Type      | Default |
-| ------------- | -------------- | ------------------------------------------------------------------------- | --------- | ------- |
-| `backButton`  | `back-button`  | Render back button.                                                       | `boolean` | `false` |
-| `backdrop`    | `backdrop`     | Backdrop for the drawer. Will also make it clickable to close the drawer. | `boolean` | `false` |
-| `closeButton` | `close-button` | Render close button.                                                      | `boolean` | `false` |
-| `open`        | `open`         | Open/closestate of the drawer.                                            | `boolean` | `false` |
-| `title`       | `title`        | Open/closestate of the drawer.                                            | `string`  | `""`    |
+| Property                | Attribute                 | Description                                                                                            | Type      | Default |
+| ----------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------ | --------- | ------- |
+| `backButtonLabel`       | `back-button-label`       | Back button label.                                                                                     | `string`  | `""`    |
+| `disableBackdrop`       | `disable-backdrop`        | Disable backdrop for the drawer. Will also make it clickable to close the drawer.                      | `boolean` | `false` |
+| `disableContentPadding` | `disable-content-padding` | Disable drawer content padding. Use only if you have specific use case and you need to use full width. | `boolean` | `false` |
+| `exitButtonLabel`       | `exit-button-label`       | Back button label.                                                                                     | `string`  | `""`    |
+| `heading`               | `heading`                 | Open/close state of the drawer.                                                                        | `string`  | `""`    |
+| `open`                  | `open`                    | Open/closestate of the drawer.                                                                         | `boolean` | `false` |
+| `showBackButton`        | `show-back-button`        | Render back button.                                                                                    | `boolean` | `false` |
+| `showExitButton`        | `show-exit-button`        | Render exit button.                                                                                    | `boolean` | `false` |
 
 
 ## Events
 
-| Event               | Description                         | Type                |
-| ------------------- | ----------------------------------- | ------------------- |
-| `backButtonClicked` | Fired when clicking backButton (<-) | `CustomEvent<void>` |
-| `exitButtonClicked` | Fired when clicking backButton (X)  | `CustomEvent<void>` |
+| Event               | Description                                                               | Type                |
+| ------------------- | ------------------------------------------------------------------------- | ------------------- |
+| `backButtonClicked` | Fired when clicking backButton (<-)                                       | `CustomEvent<void>` |
+| `exitButtonClicked` | Fired when clicking backButton (X). Also sent when clicking the backdrop. | `CustomEvent<void>` |
 
 
 ----------------------------------------------
