@@ -14,7 +14,7 @@ export default meta;
 export const BasicExample = meta.story({
   args: {},
   render: (args) => (
-    <div style={{ width: "200px"}}>
+    <div style={{ width: "200px" }}>
       <ScoutAvatar {...args} />
     </div>
   ),

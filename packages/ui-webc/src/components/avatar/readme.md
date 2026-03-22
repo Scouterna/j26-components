@@ -12,8 +12,8 @@ Wrap it with a container, to determine its size, since it scales to fit containe
 
 | Property   | Attribute   | Description                       | Type     | Default |
 | ---------- | ----------- | --------------------------------- | -------- | ------- |
-| `alt`      | `alt`       | The name of the user.             | `string` | `''`    |
-| `imageSrc` | `image-src` | The source URL of the user image. | `string` | `''`    |
+| `alt`      | `alt`       | The name of the user.             | `string` | `""`    |
+| `imageSrc` | `image-src` | The source URL of the user image. | `string` | `""`    |
 
 
 ----------------------------------------------
