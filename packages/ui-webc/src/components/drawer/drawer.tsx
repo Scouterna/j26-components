@@ -26,11 +26,11 @@ const exitIcon =
 export class ScoutDrawer implements ComponentInterface {
   @Element() rootElement: HTMLElement;
   /**
-   * Open/closestate of the drawer.
+   * Open/close state of the drawer.
    */
   @Prop() open: boolean = false;
   /**
-   * Open/close state of the drawer.
+   * Heading within the sheet.
    */
   @Prop() heading: string = "";
   /**
@@ -46,11 +46,11 @@ export class ScoutDrawer implements ComponentInterface {
    */
   @Prop() showExitButton: boolean = false;
   /**
-   * Back button label.
+   * Exit button label.
    */
   @Prop() exitButtonLabel: string = "";
   /**
-   * Disable backdrop for the drawer. Will also make it clickable to close the drawer.
+   * Disable backdrop for the drawer.
    */
   @Prop() disableBackdrop: boolean = false;
 
@@ -64,6 +64,9 @@ export class ScoutDrawer implements ComponentInterface {
 
   componentWillLoad(): Promise<void> | void {
     this.focusedNode = document.activeElement;
+  }
+  componentDidLoad(): void {
+    this.setDrawerOpenState(true);
   }
   disconnectedCallback(): void {
     this.focusedNode;
@@ -86,10 +89,14 @@ export class ScoutDrawer implements ComponentInterface {
   }
 
   @Watch("open")
-  setDialogOpenState(open: boolean) {
+  setDrawerOpenState(open: boolean) {
     const drawer = this.rootElement.shadowRoot.querySelector(
       ".drawer--container",
-    ) as HTMLElement;
+    ) as HTMLElement | null;
+
+    if (!drawer) {
+      this.drawerState = open ? "opening" : "closing";
+    }
     if (open) {
       this.drawerState = "opening";
       focusLock.on(drawer);
@@ -134,28 +141,26 @@ export class ScoutDrawer implements ComponentInterface {
           {shouldRenderHeader && (
             <div class="header--wrapper">
               {this.showBackButton && (
-                // biome-ignore lint/a11y/useButtonType: <not needed>
                 <button
+                  type="button"
                   class="back-button"
                   onClick={() => this.onBackButtonClick()}
                 >
-                  <span class="icon" innerHTML={backIcon}>
-                    <span class="visually-hidden">{this.backButtonLabel}</span>
-                  </span>
+                  <span class="icon" innerHTML={backIcon}></span>
+                  <span class="visually-hidden">{this.backButtonLabel}</span>
                 </button>
               )}
               {this.showExitButton && (
-                // biome-ignore lint/a11y/useButtonType: <not needed>
                 <button
+                  type="button"
                   class="exit-button"
                   onClick={() => this.onExitButtonClick()}
                 >
-                  <span class="icon" innerHTML={exitIcon}>
-                    <span class="visually-hidden">{this.exitButtonLabel}</span>
-                  </span>
+                  <span class="icon" innerHTML={exitIcon}></span>
+                  <span class="visually-hidden">{this.exitButtonLabel}</span>
                 </button>
               )}
-              {this.heading && <h3 class="title">{this.heading}</h3>}
+              {this.heading && <h3 class="heading">{this.heading}</h3>}
             </div>
           )}
           <div class={!this.disableContentPadding && `content--wrapper`}>
