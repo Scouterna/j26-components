@@ -18,7 +18,6 @@ import {
   },
   assetsDirs: ["assets"],
 })
-
 export class ScoutAvatar implements ComponentInterface {
   /**
    * The source URL of the user image.
