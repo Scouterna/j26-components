@@ -33,5 +33,5 @@ export default defineMain({
       },
     } satisfies UserConfig);
   },
-  staticDirs: ["../public"],
+  staticDirs: ["../public", "../../ui-webc/dist/ui-webc/assets"],
 });
