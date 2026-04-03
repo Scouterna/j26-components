@@ -131,7 +131,5 @@ export class ScoutSegmentedControl implements ComponentInterface {
       (_, index) =>
         this.widths.slice(0, index).reduce((acc, w) => acc + w, 0) + baseLeft,
     );
-
-    console.log("Calculated widths:", this.widths);
   }
 }
