@@ -33,9 +33,8 @@ export type Size = "small" | "medium";
 })
 export class ScoutSegmentedControl implements ComponentInterface {
   /**
-   * Size of the input element. Large fields are typically used for prominent
-   * inputs, such as a top search field on a page, while medium fields are used
-   * for regular form inputs.
+   * Visual size of the segmented control.
+   * Use `small` for dense layouts and `medium` for the default size.
    */
   @Prop() size: Size = "medium";
 
