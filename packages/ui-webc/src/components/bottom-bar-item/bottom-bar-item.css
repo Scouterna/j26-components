@@ -4,6 +4,7 @@
 }
 
 .button {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -13,17 +14,29 @@
   border: none;
   color: var(--color-text-base);
   cursor: pointer;
+  z-index: 0;
 }
 
 @media (hover: hover) {
-  .button:hover {
+  .button:hover::after {
     background-color: var(--color-neutral-50);
   }
 }
 
 .button.active {
-  background-color: var(--color-blue-50);
+  /* background-color: var(--color-blue-50); */
   color: var(--color-blue-500);
+}
+.button.active::after {
+  content: "";
+  position: absolute;
+  top: var(--spacing-2);
+  bottom: var(--spacing-2);
+  right: var(--spacing-2);
+  left: var(--spacing-2);
+  background-color: var(--color-blue-50);
+  border-radius: var(--spacing-4);
+  z-index: -1;
 }
 
 .button .icon {
