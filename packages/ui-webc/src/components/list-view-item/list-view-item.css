@@ -9,16 +9,28 @@
   text-align: unset;
   min-height: var(--spacing-12);
   color: var(--color-text-base);
-  padding: var(--spacing-2) var(--spacing-4);
+  padding: var(--spacing-4) var(--spacing-4);
   cursor: pointer;
-  border: none;
-  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: var(--color-white);
   text-decoration: none;
+  border-radius: 6px;
+}
+
+:host(:first-of-type) .button {
+  border-top-left-radius: var(--spacing-4);
+  border-top-right-radius: var(--spacing-4);
+}
+
+:host(:last-of-type) .button {
+  border-bottom-left-radius: var(--spacing-4);
+  border-bottom-right-radius: var(--spacing-4);
 }
 
 @media (hover: hover) {
   .button:hover {
     background-color: var(--color-background-brand-subtle-hovered);
+    border-color: rgba(0, 0, 0, 0.03);
   }
 }
 
@@ -38,7 +50,7 @@
 
 .prefix-icon {
   justify-content: flex-start;
-  width: var(--spacing-14);
+  width: var(--spacing-10);
 }
 
 .suffix-icon {
