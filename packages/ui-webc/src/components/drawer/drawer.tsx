@@ -65,9 +65,7 @@ export class ScoutDrawer implements ComponentInterface {
   componentWillLoad(): Promise<void> | void {
     this.focusedNode = document.activeElement;
   }
-  componentDidLoad(): void {
-    this.setDrawerOpenState(true);
-  }
+
   disconnectedCallback(): void {
     this.focusedNode;
   }

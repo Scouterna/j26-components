@@ -1,3 +1,9 @@
+.drawer {
+  width: 100%;
+}
+/**
+ * Mobile style
+ */
 .drawer--container {
   position: fixed;
   bottom: 0;
@@ -33,13 +39,15 @@
 }
 
 .open {
-  animation: drawerOpen 0.3s ease-out forwards;
+  animation: drawerOpen 0.3s ease-in-out forwards;
 }
 .close {
-  animation: drawerClose 0.3s ease-out forwards;
+  animation: drawerClose 0.3s ease-in-out forwards;
 }
 
-/* Desktop drawer style */
+/**
+ * Desktop style
+ */
 @media screen and (min-width: 901px) {
   @keyframes drawerOpen {
     from {
@@ -66,6 +74,7 @@
     height: 100%;
     max-height: 100%;
     max-width: 90%;
+    min-height: 600px;
     width: 430px;
     transform: translateX(100%);
     border-top-left-radius: var(--spacing-5);
@@ -73,10 +82,10 @@
     border-top-right-radius: 0;
   }
   .open {
-    animation: drawerOpen 0.3s ease-out forwards;
+    animation: drawerOpen 0.3s ease-in-out forwards;
   }
   .close {
-    animation: drawerClose 0.3s ease-out forwards;
+    animation: drawerClose 0.3s ease-in-out forwards;
   }
 }
 

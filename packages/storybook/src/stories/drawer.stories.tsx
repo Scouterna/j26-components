@@ -23,7 +23,7 @@ export const BasicExample = meta.story({
   },
   render: (args) => (
     <div>
-      <p>some content within the page</p>
+      <p>some content within the page. Make sure the Drawer is placed in the root.</p>
       <ScoutDrawer {...args}>
         <p>Content inside the drawer</p>
       </ScoutDrawer>
