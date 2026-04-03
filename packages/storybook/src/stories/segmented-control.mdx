@@ -1,0 +1,51 @@
+import {
+  Meta,
+  Controls,
+  Description,
+  Primary,
+  Source,
+  Stories,
+  Subtitle,
+  Title,
+} from '@storybook/addon-docs/blocks';
+
+import * as SegmentedControlStories from './segmented-control.stories';
+
+<Meta of={SegmentedControlStories} />
+
+<Title />
+<Subtitle />
+<Description />
+<Primary />
+<Controls />
+
+## Code Examples
+
+### Controlling state
+
+You must manage the state of the active segment yourself by listening to the
+`scoutChange` event and updating the `value` prop accordingly.
+
+<Source
+  language="tsx"
+  code={`
+    import { useState } from "react";
+    import { ScoutSegmentedControl } from "@scouterna/ui-react";
+
+    const [activeSegment, setActiveSegment] = useState(0);
+
+    return (
+      <ScoutSegmentedControl
+        value={activeSegment}
+        onScoutChange={(e) => setActiveSegment(e.detail.value)}
+      >
+        <button type="button">Alla</button>
+        <button type="button">Bokade</button>
+      </ScoutSegmentedControl>
+    );
+  `}
+/>
+
+## Stories
+
+<Stories title={false} />

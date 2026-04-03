@@ -28,8 +28,6 @@ import {
   },
 })
 export class ScoutTabs implements ComponentInterface {
-  @Element() el: HTMLElement;
-
   /**
    * Zero-based index of the currently active tab.
    */
@@ -41,12 +39,14 @@ export class ScoutTabs implements ComponentInterface {
    * The `value` in the event detail is the zero-based index of the newly selected tab.
    */
   @Event()
-  public scoutChange: EventEmitter<{ value: number }>;
+  public scoutChange!: EventEmitter<{ value: number }>;
 
   @State()
   private widths: number[] = [];
   @State()
   private lefts: number[] = [];
+
+  @Element() el!: HTMLElement;
 
   render() {
     return (
