@@ -1,5 +1,17 @@
 # @scouterna/ui-webc
 
+## 4.0.0
+
+### Major Changes
+
+- [#101](https://github.com/Scouterna/j26-components/pull/101) [`5025bcf`](https://github.com/Scouterna/j26-components/commit/5025bcff44b393a997aad863c0444f47b4bbfb8d) Thanks [@daBack](https://github.com/daBack)! - New component Drawer
+
+- [#104](https://github.com/Scouterna/j26-components/pull/104) [`ba60fd3`](https://github.com/Scouterna/j26-components/commit/ba60fd3fb99b790992baf0cda2893cdc9b45e715) Thanks [@daBack](https://github.com/daBack)! - New component Avatar
+
+### Minor Changes
+
+- [#103](https://github.com/Scouterna/j26-components/pull/103) [`95d4b7c`](https://github.com/Scouterna/j26-components/commit/95d4b7ccb9b580d04c8c9c917fd8b5e130c54a28) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Added Segmented Control component.
+
 ## 3.2.0
 
 ### Minor Changes
