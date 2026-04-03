@@ -1,4 +1,4 @@
-import { Component, Element, Host, h, Listen } from "@stencil/core";
+import { Component, Element, h, Listen } from "@stencil/core";
 
 @Component({
   tag: "scout-list-view",
@@ -25,11 +25,11 @@ export class ScoutListView {
     const otherRadios: HTMLInputElement[] = [];
 
     listItems.forEach((item) => {
-      const radios = item.shadowRoot.querySelectorAll<HTMLInputElement>(
+      const radios = item.shadowRoot?.querySelectorAll<HTMLInputElement>(
         `input[type="radio"][name="${CSS.escape(element.name)}"]`,
       );
 
-      radios.forEach((r) => {
+      radios?.forEach((r) => {
         if (r !== element) {
           otherRadios.push(r);
         }
@@ -43,9 +43,10 @@ export class ScoutListView {
 
   render() {
     return (
-      <Host role="list">
+      // biome-ignore lint/a11y/useSemanticElements: custom-elements are not allowed as children of a <ul>
+      <div class="list" role="list">
         <slot />
-      </Host>
+      </div>
     );
   }
 }

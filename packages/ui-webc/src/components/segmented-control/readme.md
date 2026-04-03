@@ -16,10 +16,10 @@ Use button elements as the slotted segment options.
 
 ## Properties
 
-| Property | Attribute | Description                                                                                                                                                                  | Type                  | Default    |
-| -------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ---------- |
-| `size`   | `size`    | Size of the input element. Large fields are typically used for prominent inputs, such as a top search field on a page, while medium fields are used for regular form inputs. | `"medium" \| "small"` | `"medium"` |
-| `value`  | `value`   | Zero-based index of the currently active segment.                                                                                                                            | `number`              | `0`        |
+| Property | Attribute | Description                                                                                            | Type                  | Default    |
+| -------- | --------- | ------------------------------------------------------------------------------------------------------ | --------------------- | ---------- |
+| `size`   | `size`    | Visual size of the segmented control. Use `small` for dense layouts and `medium` for the default size. | `"medium" \| "small"` | `"medium"` |
+| `value`  | `value`   | Zero-based index of the currently active segment.                                                      | `number`              | `0`        |
 
 
 ## Events
