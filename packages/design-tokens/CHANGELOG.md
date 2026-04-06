@@ -1,5 +1,11 @@
 # @scouterna/design-tokens
 
+## 0.0.6
+
+### Patch Changes
+
+- [`436a2a4`](https://github.com/Scouterna/j26-components/commit/436a2a46417bbad85d0bc4d3c5c06d5904cce970) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Update gray-50 to be softer
+
 ## 0.0.5
 
 ### Patch Changes
