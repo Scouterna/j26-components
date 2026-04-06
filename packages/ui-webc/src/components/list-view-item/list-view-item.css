@@ -33,6 +33,10 @@
     border-color: rgba(0, 0, 0, 0.03);
   }
 }
+.button:active {
+  background-color: var(--color-background-brand-subtle-hovered);
+  border-color: rgba(0, 0, 0, 0.03);
+}
 
 .prefix-icon,
 .suffix-icon {
