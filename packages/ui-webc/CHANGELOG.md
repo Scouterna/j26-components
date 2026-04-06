@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 4.0.2
+
+### Patch Changes
+
+- [`6f350f5`](https://github.com/Scouterna/j26-components/commit/6f350f57aa1fa548118357d50816626ad2ba258d) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Add active states for touch devices to list items and selects.
+
 ## 4.0.1
 
 ### Patch Changes
