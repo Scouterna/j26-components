@@ -2,7 +2,7 @@ import { ScoutPagination } from "@scouterna/ui-react";
 import preview from "#.storybook/preview";
 
 const meta = preview.meta({
-  title: "Uncategorized/Pagination",
+  title: "Interaction/Pagination",
   component: ScoutPagination,
   parameters: {
     layout: "centered",
