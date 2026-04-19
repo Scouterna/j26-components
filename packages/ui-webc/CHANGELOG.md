@@ -1,5 +1,13 @@
 # @scouterna/ui-webc
 
+## 4.1.0
+
+### Minor Changes
+
+- [`89c5126`](https://github.com/Scouterna/j26-components/commit/89c5126b7c235fca2cd5340e71b1001922c4ea4a) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Make card more prominent
+
+- [`b693ae3`](https://github.com/Scouterna/j26-components/commit/b693ae327fa8a5d82d349056addbaefbb6c9f678) Thanks [@scriptcoded](https://github.com/scriptcoded)! - New app bar styling
+
 ## 4.0.2
 
 ### Patch Changes
