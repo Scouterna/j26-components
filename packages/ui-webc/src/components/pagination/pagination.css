@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.arrow {
+  display: flex;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.pageButton {
+  cursor: pointer;
+  flex: 1;
+  font-size: var(--text-body-sm);
+  border-radius: 50%;
+  background-color: white;
+  outline: none;
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  border: none;
+}
+.pageButton:active {
+  background-color: var(--color-neutral-200);
+}
+.pageButton:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-neutral-500);
+}
+.selected {
+  background-color: var(--color-neutral-200);
+}
