@@ -1,0 +1,116 @@
+:host {
+  display: block;
+  --callout-color: var(--color-neutral-600);
+}
+
+:host([data-variant="info"]) {
+  --callout-color: var(--color-neutral-600);
+}
+
+:host([data-variant="tip"]) {
+  --callout-color: var(--color-blue-500);
+}
+
+:host([data-variant="success"]) {
+  --callout-color: var(--color-trackergreen-500);
+}
+
+:host([data-variant="warning"]) {
+  --callout-color: var(--color-orange-600);
+}
+
+:host([data-variant="error"]) {
+  --callout-color: var(--color-challengerpink-600);
+}
+
+:host([data-variant="announcement"]) {
+  --callout-color: var(--color-blue-700);
+}
+
+.callout {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  background: var(--color-white);
+  border: 1px solid
+    color-mix(in oklab, var(--callout-color) 30%, var(--color-gray-100));
+  border-radius: calc(var(--spacing-base) * 3.5);
+  padding: calc(var(--spacing-base) * 3.5) var(--spacing-4);
+  position: relative;
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  width: var(--spacing-6);
+  height: var(--spacing-6);
+  background-color: var(--callout-color);
+  mask-image: var(--icon-url);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+
+  &.body--dismissible {
+    padding-right: var(--spacing-5);
+  }
+}
+
+.title {
+  font-family: var(--fontfamily-sans);
+  font-size: calc(var(--fontsize-base) * 0.9375);
+  font-weight: 600;
+  color: var(--color-neutral-800);
+  line-height: 1.3;
+}
+
+.description {
+  font-family: var(--fontfamily-sans);
+  font-size: var(--fontsize-sm);
+  color: var(--color-neutral-600);
+  line-height: 1.4;
+}
+
+.title ~ .description {
+  margin-top: var(--spacing-1);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-3);
+
+  &.actions--empty {
+    display: none;
+  }
+}
+
+.dismiss {
+  position: absolute;
+  top: calc(var(--spacing-base) * 2.5);
+  right: calc(var(--spacing-base) * 2.5);
+  width: var(--spacing-7);
+  height: var(--spacing-7);
+  border-radius: var(--spacing-2);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-neutral-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.dismiss-icon {
+  width: var(--spacing-4);
+  height: var(--spacing-4);
+  background-color: currentColor;
+  mask-image: var(--icon-url);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
