@@ -73,10 +73,7 @@ export class ScoutTabbedView implements ComponentInterface {
       panel.setAttribute("tabindex", i === this.value ? "0" : "-1");
       if (this.linkedTabsId) {
         panel.setAttribute("id", `${this.linkedTabsId}-panel-${i}`);
-        panel.setAttribute(
-          "aria-labelledby",
-          `${this.linkedTabsId}-tab-${i}`,
-        );
+        panel.setAttribute("aria-labelledby", `${this.linkedTabsId}-tab-${i}`);
       }
     });
   }

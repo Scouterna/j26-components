@@ -10,7 +10,13 @@ import { Component, h } from "@stencil/core";
 export class ScoutTabsTab {
   render() {
     return (
-      <button class="button-native" type="button" role="presentation" tabindex="-1">
+      // biome-ignore lint/a11y/noInteractiveElementToNoninteractiveRole: The host carries role="tab" (set by scout-tabs)
+      <button
+        class="button-native"
+        type="button"
+        role="presentation"
+        tabindex="-1"
+      >
         <div class="inner-container">
           <slot />
         </div>
