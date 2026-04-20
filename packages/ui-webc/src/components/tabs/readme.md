@@ -14,9 +14,10 @@ handled programmatically for now.
 
 ## Properties
 
-| Property | Attribute | Description                                   | Type     | Default |
-| -------- | --------- | --------------------------------------------- | -------- | ------- |
-| `value`  | `value`   | Zero-based index of the currently active tab. | `number` | `0`     |
+| Property     | Attribute     | Description                                                                                                                                                                                                                         | Type     | Default     |
+| ------------ | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
+| `swipeValue` | `swipe-value` | Fractional tab index used to interpolate the indicator position during a swipe gesture. Set this from `scoutSwipeProgress` events on `scout-tabbed-view`. When undefined the indicator uses `value` with its normal CSS transition. | `number` | `undefined` |
+| `value`      | `value`       | Zero-based index of the currently active tab.                                                                                                                                                                                       | `number` | `0`         |
 
 
 ## Events

@@ -13,5 +13,4 @@
   width: 0;
   height: var(--tabs-indicator-height);
   background-color: var(--color-background-brand-base);
-  transition: all 0.3s ease;
 }

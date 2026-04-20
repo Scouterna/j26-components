@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  overflow: hidden;
+  height: 100%;
+}
+
+.track {
+  display: flex;
+  height: 100%;
+  touch-action: pan-y;
+  user-select: none;
+  will-change: transform;
+}

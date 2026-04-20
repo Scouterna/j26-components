@@ -42,3 +42,8 @@
 :host([data-active]) .button-native {
   color: var(--color-text-base);
 }
+
+.button-native:focus-visible .inner-container {
+  outline: 2px solid var(--color-background-brand-base);
+  outline-offset: 2px;
+}

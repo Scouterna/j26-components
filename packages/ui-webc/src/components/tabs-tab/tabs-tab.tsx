@@ -10,7 +10,7 @@ import { Component, h } from "@stencil/core";
 export class ScoutTabsTab {
   render() {
     return (
-      <button class="button-native" type="button">
+      <button class="button-native" type="button" role="presentation" tabindex="-1">
         <div class="inner-container">
           <slot />
         </div>
