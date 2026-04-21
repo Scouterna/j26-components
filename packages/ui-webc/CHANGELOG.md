@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 4.1.1
+
+### Patch Changes
+
+- [`889ee65`](https://github.com/Scouterna/j26-components/commit/889ee65fc633857840d30d5cf60952a488507dc3) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Make tabber swiping work on Chrome
+
 ## 4.1.0
 
 ### Minor Changes
