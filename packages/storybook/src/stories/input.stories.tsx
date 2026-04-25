@@ -24,12 +24,6 @@ export const Large = BasicExample.extend({
   },
 });
 
-export const Elevated = BasicExample.extend({
-  args: {
-    variant: "elevated",
-  },
-});
-
 export const Disabled = BasicExample.extend({
   args: {
     disabled: true,

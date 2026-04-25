@@ -9,8 +9,6 @@ import {
 import { inputMixin } from "../../mixins/inputMixin";
 
 export type Size = "medium" | "large";
-export type Variant = "default" | "elevated";
-
 export type InputType =
   | "text"
   | "password"
@@ -56,13 +54,6 @@ export class ScoutInput
   @Prop() size: Size = "medium";
 
   /**
-   * Visual variant of the input element. Elevated inputs have a shadow to help
-   * them stand out from the background and should only be used when absolutely
-   * positioned above other content.
-   */
-  @Prop() variant: Variant = "default";
-
-  /**
    * Type of input element. If you need a number input, read the accessibility
    * section of this MDN article first:
    * https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/number#accessibility
@@ -100,10 +91,9 @@ export class ScoutInput
 
   render() {
     const sizeClass = this.size === "large" ? "large" : "";
-    const variantClass = this.variant === "elevated" ? "elevated" : "";
 
     return (
-      <Host class={`${sizeClass} ${variantClass}`}>
+      <Host class={sizeClass}>
         <input
           ref={(el) => this.setInputRef(el)}
           id={this.ariaId}

@@ -23,7 +23,6 @@ display a label, help text, and error messages.
 | `type`        | `type`        | Type of input element. If you need a number input, read the accessibility section of this MDN article first: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/number#accessibility | `"email" \| "number" \| "password" \| "tel" \| "text" \| "url" \| string & {}`                       | `"text"`    |
 | `validity`    | `validity`    | Custom validation message. If set, the input is considered invalid by the browser, and if wrapped by a field component, the message is displayed. If not set, the input is considered valid.                 | `string`                                                                                             | `undefined` |
 | `value`       | `value`       | Value of the input element, in case you want to control it yourself.                                                                                                                                         | `string`                                                                                             | `""`        |
-| `variant`     | `variant`     | Visual variant of the input element. Elevated inputs have a shadow to help them stand out from the background and should only be used when absolutely positioned above other content.                        | `"default" \| "elevated"`                                                                            | `"default"` |
 
 
 ## Events
