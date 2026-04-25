@@ -5,7 +5,10 @@ import {
   h,
   Mixin,
   Prop,
+  State,
+  Watch,
 } from "@stencil/core";
+import xIcon from "@tabler/icons/outline/x.svg";
 import { inputMixin } from "../../mixins/inputMixin";
 
 export type Size = "medium" | "large";
@@ -90,18 +93,53 @@ export class ScoutInput
   @Prop() placeholder?: string;
 
   /**
-   * URL of an SVG icon to display inside the leading edge of the input.
-   * Import the SVG as a URL and pass it here, e.g. `import searchIcon from
-   * "@tabler/icons/outline/search.svg"`.
+   * Raw SVG string for an icon to display at the leading edge of the input.
+   * Import with the `?raw` suffix, e.g. `import searchIcon from
+   * "@tabler/icons/outline/search.svg?raw"`.
    */
   @Prop() icon?: string;
+
+  /**
+   * When true, a clear button is shown at the trailing edge whenever the
+   * input has a value. Clicking it resets the input to empty and emits
+   * scoutInputChange.
+   */
+  @Prop() clearable: boolean = false;
+
+  @State() private _hasValue: boolean = false;
+
+  private nativeInput!: HTMLInputElement;
+
+  componentWillLoad() {
+    super.componentWillLoad();
+    this._hasValue = !!this.value;
+  }
+
+  @Watch("value")
+  watchValue(newVal: string) {
+    this._hasValue = !!newVal;
+  }
+
+  onInput() {
+    super.onInput();
+    this._hasValue = !!this.nativeInput?.value;
+  }
+
+  clearValue() {
+    if (this.nativeInput) {
+      this.nativeInput.value = "";
+      this.onInput();
+    }
+  }
 
   render() {
     const sizeClass = this.size === "large" ? "large" : "";
     const iconClass = this.icon ? "has-icon" : "";
+    const clearClass = this.clearable ? "has-clear" : "";
+    const showClear = this.clearable && this._hasValue;
 
     return (
-      <Host class={`${sizeClass} ${iconClass}`}>
+      <Host class={`${sizeClass} ${iconClass} ${clearClass}`}>
         {this.icon && (
           <span
             class="icon"
@@ -112,7 +150,10 @@ export class ScoutInput
           />
         )}
         <input
-          ref={(el) => this.setInputRef(el)}
+          ref={(el) => {
+            this.setInputRef(el);
+            this.nativeInput = el as HTMLInputElement;
+          }}
           id={this.ariaId}
           type={this.type}
           name={this.name}
@@ -126,6 +167,20 @@ export class ScoutInput
           onBlur={() => this.onBlur()}
           onInvalid={() => this.onInvalid()}
         />
+        {showClear && (
+          <button
+            class="clear-btn"
+            type="button"
+            aria-label="Rensa"
+            onClick={() => this.clearValue()}
+          >
+            <span
+              class="clear-icon"
+              style={{ "--icon-x": `url(${xIcon})` }}
+              aria-hidden="true"
+            />
+          </button>
+        )}
       </Host>
     );
   }

@@ -1,7 +1,8 @@
 :host {
   position: relative;
   display: flex;
-  height: 44px;
+  height: var(--scout-input-height);
+  --scout-input-height: 44px;
   --scout-input-padding: var(--spacing-3);
   --scout-input-border-radius: 14px;
   --scout-input-type: var(--type-body-base);
@@ -9,7 +10,7 @@
 }
 
 :host(.large) {
-  height: var(--spacing-14);
+  --scout-input-height: var(--spacing-14);
   --scout-input-padding: var(--spacing-4);
   --scout-input-border-radius: 16px;
   --scout-input-type: var(--type-body-lg);
@@ -43,7 +44,64 @@
 
 :host(.has-icon) .input {
   padding-left: calc(
-    var(--scout-input-padding) + var(--scout-input-icon-size) + var(--spacing-2)
+    var(--scout-input-padding) +
+    var(--scout-input-icon-size) +
+    var(--spacing-2)
+  );
+}
+
+.clear-btn {
+  position: absolute;
+  right: calc((var(--scout-input-height) - var(--spacing-8)) / 2);
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--spacing-8);
+  height: var(--spacing-8);
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+
+  /* Touch target */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--spacing-10);
+    height: var(--spacing-10);
+  }
+}
+
+.clear-icon {
+  display: block;
+  width: var(--spacing-5);
+  height: var(--spacing-5);
+  background-color: var(--color-neutral-500);
+  mask-image: var(--icon-x);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.clear-btn:hover {
+  background-color: var(--color-gray-200);
+
+  & .clear-icon {
+    background-color: var(--color-neutral-700);
+  }
+}
+
+:host(.has-clear) .input {
+  padding-right: calc(
+    var(--scout-input-padding) +
+    var(--spacing-6) +
+    var(--spacing-2)
   );
 }
 
