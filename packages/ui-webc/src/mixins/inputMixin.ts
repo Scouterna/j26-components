@@ -54,7 +54,11 @@ export const inputMixin = <B extends MixedInCtor>(Base: B) => {
 
     @State() ariaId: string;
 
-    private inputElement:
+    // JS private field (#) instead of TypeScript's `private` — anonymous classes returned by mixins
+    // trigger TS4094 with TypeScript private/protected, which causes Stencil to skip type declaration
+    // generation for all components using this mixin.
+    // Read more here: https://github.com/stenciljs/core/pull/6613/changes#diff-50fa239140ccfeb37c678dbf29fb9012d8e1639c1bae4e6f93ae8f6b64e7b679R113-R118
+    #inputElement:
       | HTMLButtonElement
       | HTMLInputElement
       | HTMLOutputElement
@@ -73,8 +77,8 @@ export const inputMixin = <B extends MixedInCtor>(Base: B) => {
     onInput() {
       this.emitValidityEvent();
       this.scoutInputChange.emit({
-        value: this.inputElement.value,
-        element: this.inputElement,
+        value: this.#inputElement.value,
+        element: this.#inputElement,
       });
     }
 
@@ -88,15 +92,15 @@ export const inputMixin = <B extends MixedInCtor>(Base: B) => {
 
     emitValidityEvent() {
       this.scoutValidate.emit({
-        value: this.inputElement.value,
-        element: this.inputElement,
+        value: this.#inputElement.value,
+        element: this.#inputElement,
       });
     }
 
     @Watch("validity")
     runValidation() {
-      this.inputElement.setCustomValidity(this.validity ?? "");
-      this._scoutValidityChanged.emit({ element: this.inputElement });
+      this.#inputElement.setCustomValidity(this.validity ?? "");
+      this._scoutValidityChanged.emit({ element: this.#inputElement });
     }
 
     setInputRef(
@@ -107,7 +111,7 @@ export const inputMixin = <B extends MixedInCtor>(Base: B) => {
         | HTMLSelectElement
         | HTMLTextAreaElement,
     ) {
-      this.inputElement = el;
+      this.#inputElement = el;
     }
   }
   return InputMixin;
