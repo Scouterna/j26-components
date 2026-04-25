@@ -1,5 +1,19 @@
 # @scouterna/ui-webc
 
+## 4.2.0
+
+### Minor Changes
+
+- [`b5ee046`](https://github.com/Scouterna/j26-components/commit/b5ee0465778bb1a531fc986974dff76b5252e17a) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Add optional clear button to input fields
+
+- [`d1af7b7`](https://github.com/Scouterna/j26-components/commit/d1af7b7588dabe84891bf8d236cdcff2c459797f) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Update input to match list view
+
+- [`7dd5732`](https://github.com/Scouterna/j26-components/commit/7dd5732990a811209c8b442105ce55cdf263c725) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Optional icon in input fields
+
+### Patch Changes
+
+- [`92b24f4`](https://github.com/Scouterna/j26-components/commit/92b24f4a56304f75b86db4dcf6d70eda98e5e222) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Make buttons have same size as inputs
+
 ## 4.1.1
 
 ### Patch Changes
