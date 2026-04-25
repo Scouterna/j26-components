@@ -1,9 +1,11 @@
 :host {
+  position: relative;
   display: flex;
   height: 44px;
   --scout-input-padding: var(--spacing-3);
   --scout-input-border-radius: 14px;
   --scout-input-type: var(--type-body-base);
+  --scout-input-icon-size: var(--spacing-4);
 }
 
 :host(.large) {
@@ -11,6 +13,7 @@
   --scout-input-padding: var(--spacing-4);
   --scout-input-border-radius: 16px;
   --scout-input-type: var(--type-body-lg);
+  --scout-input-icon-size: var(--spacing-5);
 }
 
 .input {
@@ -21,6 +24,27 @@
   border-radius: var(--scout-input-border-radius);
   background-color: var(--color-gray-50);
   color: var(--color-text-base);
+}
+
+.icon {
+  position: absolute;
+  left: var(--scout-input-padding);
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--scout-input-icon-size);
+  height: var(--scout-input-icon-size);
+  background-color: var(--color-neutral-500);
+  mask-image: var(--icon);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  pointer-events: none;
+}
+
+:host(.has-icon) .input {
+  padding-left: calc(
+    var(--scout-input-padding) + var(--scout-input-icon-size) + var(--spacing-2)
+  );
 }
 
 .input:disabled {

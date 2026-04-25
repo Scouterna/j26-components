@@ -89,11 +89,28 @@ export class ScoutInput
    */
   @Prop() placeholder?: string;
 
+  /**
+   * URL of an SVG icon to display inside the leading edge of the input.
+   * Import the SVG as a URL and pass it here, e.g. `import searchIcon from
+   * "@tabler/icons/outline/search.svg"`.
+   */
+  @Prop() icon?: string;
+
   render() {
     const sizeClass = this.size === "large" ? "large" : "";
+    const iconClass = this.icon ? "has-icon" : "";
 
     return (
-      <Host class={sizeClass}>
+      <Host class={`${sizeClass} ${iconClass}`}>
+        {this.icon && (
+          <span
+            class="icon"
+            style={{
+              "--icon": `url("data:image/svg+xml,${encodeURIComponent(this.icon)}")`,
+            }}
+            aria-hidden="true"
+          />
+        )}
         <input
           ref={(el) => this.setInputRef(el)}
           id={this.ariaId}
