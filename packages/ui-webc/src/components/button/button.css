@@ -1,10 +1,10 @@
 scout-button {
   display: inline-block;
-  height: var(--spacing-10);
+  height: 44px;
   font: var(--type-body-base);
 
   &[data-size="large"] {
-    height: var(--spacing-12);
+    height: var(--spacing-14);
     font: var(--type-body-lg);
   }
 
@@ -17,7 +17,7 @@ scout-button {
     justify-content: center;
     gap: var(--spacing-3);
     padding: 0 var(--spacing-4);
-    border-radius: var(--spacing-2);
+    border-radius: 14px;
     border: 1px solid transparent;
     cursor: pointer;
     text-decoration: none;
