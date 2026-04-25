@@ -43,7 +43,7 @@ export class ScoutListViewItem {
 
   @Prop() disabled?: boolean;
 
-  @Event() scoutClick: EventEmitter<void>;
+  @Event() scoutClick!: EventEmitter<void>;
 
   render() {
     const Tag =
@@ -105,6 +105,7 @@ export class ScoutListViewItem {
           value={this.value}
           checked={this.checked}
           disabled={this.disabled}
+          label=""
         />
       );
     }

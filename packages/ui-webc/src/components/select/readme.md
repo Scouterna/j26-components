@@ -36,12 +36,12 @@ component to display a label, help text, and error messages.
 
 ## Properties
 
-| Property   | Attribute  | Description                                                                                                                                                                                  | Type      | Default     |
-| ---------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| `disabled` | `disabled` | Whether the select is disabled. Disabled selects are not editable, excluded from tab order and are not validated.                                                                            | `boolean` | `false`     |
-| `name`     | `name`     |                                                                                                                                                                                              | `string`  | `undefined` |
-| `validity` | `validity` | Custom validation message. If set, the input is considered invalid by the browser, and if wrapped by a field component, the message is displayed. If not set, the input is considered valid. | `string`  | `undefined` |
-| `value`    | `value`    | Value of the select element, in case you want to control it yourself.                                                                                                                        | `string`  | `""`        |
+| Property            | Attribute  | Description                                                                                                                                                                                  | Type      | Default     |
+| ------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ----------- |
+| `disabled`          | `disabled` | Whether the select is disabled. Disabled selects are not editable, excluded from tab order and are not validated.                                                                            | `boolean` | `false`     |
+| `name` _(required)_ | `name`     |                                                                                                                                                                                              | `string`  | `undefined` |
+| `validity`          | `validity` | Custom validation message. If set, the input is considered invalid by the browser, and if wrapped by a field component, the message is displayed. If not set, the input is considered valid. | `string`  | `undefined` |
+| `value`             | `value`    | Value of the select element, in case you want to control it yourself.                                                                                                                        | `string`  | `""`        |
 
 
 ## Events

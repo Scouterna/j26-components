@@ -33,7 +33,7 @@ export class ScoutSelect
    */
   @Prop() disabled: boolean = false;
 
-  @Prop() name: string;
+  @Prop() name!: string;
 
   render() {
     return (

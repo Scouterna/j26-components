@@ -75,7 +75,7 @@ export class ScoutInput
    */
   @Prop() value: string = "";
 
-  @Prop() name: string;
+  @Prop() name!: string;
 
   /**
    * Whether the input is disabled. Disabled inputs are not editable, excluded

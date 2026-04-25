@@ -44,7 +44,7 @@ export class ScoutBottomBarItem {
    */
   @Prop() active?: boolean;
 
-  @Event() scoutClick: EventEmitter<void>;
+  @Event() scoutClick!: EventEmitter<void>;
 
   render() {
     const Tag = this.type === "link" ? "a" : "button";

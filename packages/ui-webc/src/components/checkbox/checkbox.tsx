@@ -32,15 +32,15 @@ export class ScoutCheckbox
   /**
    * Use this prop if you need to connect your checkbox with another element describing its use, other than the property label.
    */
-  @Prop() ariaLabelledby: string;
+  @Prop() ariaLabelledby?: string;
 
-  @Prop() label: string;
+  @Prop() label?: string;
 
-  @Prop() value: string;
+  @Prop() value?: string;
 
-  @Prop() name: string;
+  @Prop() name?: string;
 
-  @Event() scoutChecked: EventEmitter<{
+  @Event() scoutChecked!: EventEmitter<{
     checked: boolean;
     element: HTMLInputElement;
   }>;

@@ -24,7 +24,7 @@ const exitIcon =
   },
 })
 export class ScoutDrawer implements ComponentInterface {
-  @Element() rootElement: HTMLElement;
+  @Element() rootElement!: HTMLElement;
   /**
    * Open/close state of the drawer.
    */
@@ -60,7 +60,7 @@ export class ScoutDrawer implements ComponentInterface {
   @Prop() disableContentPadding: boolean = false;
 
   @State() drawerState: "opening" | "closing" | "open" | "closed" = "closed";
-  @State() focusedNode: Element = null;
+  @State() focusedNode: Element | null = null;
 
   componentWillLoad(): Promise<void> | void {
     this.focusedNode = document.activeElement;
@@ -76,12 +76,12 @@ export class ScoutDrawer implements ComponentInterface {
   /**
    * Fired when clicking backButton (<-)
    */
-  @Event() backButtonClicked: EventEmitter<void>;
+  @Event() backButtonClicked!: EventEmitter<void>;
 
   /**
    * Fired when clicking backButton (X). Also sent when clicking the backdrop.
    */
-  @Event() exitButtonClicked: EventEmitter<void>;
+  @Event() exitButtonClicked!: EventEmitter<void>;
 
   onBackButtonClick() {
     this.backButtonClicked.emit();
@@ -92,13 +92,16 @@ export class ScoutDrawer implements ComponentInterface {
 
   @Watch("open")
   setDrawerOpenState(open: boolean) {
-    const drawer = this.rootElement.shadowRoot.querySelector(
+    const drawer = this.rootElement.shadowRoot?.querySelector(
       ".drawer--container",
     ) as HTMLElement | null;
 
     if (!drawer) {
       this.drawerState = open ? "opening" : "closing";
+      console.error("Drawer element is null");
+      return;
     }
+
     if (open) {
       this.drawerState = "opening";
       focusLock.on(drawer);
@@ -165,7 +168,7 @@ export class ScoutDrawer implements ComponentInterface {
               {this.heading && <h3 class="heading">{this.heading}</h3>}
             </div>
           )}
-          <div class={!this.disableContentPadding && `content--wrapper`}>
+          <div class={!this.disableContentPadding ? `content--wrapper` : ""}>
             <slot />
           </div>
         </div>

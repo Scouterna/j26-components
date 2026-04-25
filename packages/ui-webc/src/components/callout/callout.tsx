@@ -59,7 +59,7 @@ export class ScoutCallout {
   @Prop() dismissible: boolean = false;
 
   /** Fired when the dismiss button is clicked. */
-  @Event() scoutDismiss: EventEmitter<void>;
+  @Event() scoutDismiss!: EventEmitter<void>;
 
   @State() private hasActions = false;
 

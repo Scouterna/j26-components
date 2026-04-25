@@ -35,11 +35,11 @@ export class ScoutSwitch
   /**
    * Use this prop if you need to connect your switch with another element describing its use, other than the property label.
    */
-  @Prop() ariaLabelledby: string;
+  @Prop() ariaLabelledby?: string;
 
-  @Prop() label: string;
+  @Prop() label?: string;
 
-  @Event() scoutChecked: EventEmitter<{
+  @Event() scoutChecked!: EventEmitter<{
     checked: boolean;
     element: HTMLInputElement;
   }>;

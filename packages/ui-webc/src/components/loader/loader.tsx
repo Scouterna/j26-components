@@ -82,6 +82,10 @@ export class ScoutLoader implements ComponentInterface {
     return this.symbols.map((symbol, index) => (
       <div
         ref={(el) => {
+          if (!el) {
+            console.error("Symbol element is null");
+            return;
+          }
           this.symbolElements[index] = el;
         }}
         class="symbol"

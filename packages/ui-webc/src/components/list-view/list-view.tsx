@@ -8,7 +8,7 @@ import { Component, Element, h, Listen } from "@stencil/core";
   },
 })
 export class ScoutListView {
-  @Element() el: HTMLElement;
+  @Element() el!: HTMLElement;
 
   @Listen("scoutChecked")
   onScoutChecked(

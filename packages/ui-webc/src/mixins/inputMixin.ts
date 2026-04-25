@@ -109,8 +109,15 @@ export const inputMixin = <B extends MixedInCtor>(Base: B) => {
         | HTMLInputElement
         | HTMLOutputElement
         | HTMLSelectElement
-        | HTMLTextAreaElement,
+        | HTMLTextAreaElement
+        | undefined,
     ) {
+      if (!el) {
+        console.error(
+          "Input element reference is undefined. This should not happen.",
+        );
+        return;
+      }
       this.#inputElement = el;
     }
   }

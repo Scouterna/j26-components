@@ -16,7 +16,7 @@ export class ScoutLink {
   /**
    * Text to be displayed for the link
    */
-  @Prop() label: string;
+  @Prop() label!: string;
 
   @Prop() rel?: string;
 
@@ -49,7 +49,7 @@ export class ScoutLink {
   /**
    * Only sent if the link is a button.
    */
-  @Event() scoutLinkClick: EventEmitter<HTMLButtonElement>;
+  @Event() scoutLinkClick!: EventEmitter<HTMLButtonElement>;
 
   render() {
     if (this.type === "button") {

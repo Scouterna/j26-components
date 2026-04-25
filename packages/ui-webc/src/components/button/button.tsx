@@ -43,7 +43,7 @@ export class ScoutButton {
   @Prop() iconPosition: "before" | "after" = "after";
   @Prop() iconOnly: boolean = false;
 
-  @Event() scoutClick: EventEmitter<void>;
+  @Event() scoutClick!: EventEmitter<void>;
 
   render() {
     const Tag = this.type === "link" ? "a" : "button";
