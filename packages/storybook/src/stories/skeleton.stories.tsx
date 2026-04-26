@@ -14,8 +14,6 @@ export default meta;
 export const BasicExample = meta.story({
   args: {},
   render: (args) => (
-    <div style={{ width: "300px", height: "300px" }}>
-      <ScoutSkeleton {...args} />
-    </div>
+    <ScoutSkeleton {...args} style={{ width: "300px", height: "300px" }} />
   ),
 });

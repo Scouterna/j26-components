@@ -14,7 +14,7 @@ Either toggle the render of the component, or use the disable property unmount t
 | Property          | Attribute          | Description                                                        | Type      | Default |
 | ----------------- | ------------------ | ------------------------------------------------------------------ | --------- | ------- |
 | `backgroundColor` | `background-color` | If you are in need of a specific background color, you can set it. | `string`  | `null`  |
-| `disable`         | `disable`          | Disable skeleton, unmounting the skeleton.                         | `boolean` | `false` |
+| `disabled`        | `disabled`         | Use the disabled property to unmount the skeleton                  | `boolean` | `false` |
 
 
 ----------------------------------------------

@@ -14,9 +14,9 @@ import { Component, type ComponentInterface, h, Prop } from "@stencil/core";
 })
 export class ScoutSkeleton implements ComponentInterface {
   /**
-   * Disable skeleton, unmounting the skeleton.
+   * Use the disabled property to unmount the skeleton
    */
-  @Prop() disable = false;
+  @Prop() disabled = false;
 
   /**
    * If you are in need of a specific background color, you can set it.
@@ -24,17 +24,18 @@ export class ScoutSkeleton implements ComponentInterface {
   @Prop() backgroundColor: string | null = null;
 
   render() {
-    if (!this.disable) {
-      return (
-        <div
-          class="skeleton"
-          style={{
-            ...(this.backgroundColor && {
-              backgroundColor: this.backgroundColor,
-            }),
-          }}
-        ></div>
-      );
+    if (this.disabled) {
+      return null;
     }
+    return (
+      <div
+        class="skeleton"
+        style={{
+          ...(this.backgroundColor && {
+            backgroundColor: this.backgroundColor,
+          }),
+        }}
+      ></div>
+    );
   }
 }
