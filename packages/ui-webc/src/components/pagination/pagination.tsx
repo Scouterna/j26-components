@@ -23,22 +23,76 @@ export class ScoutPagination implements ComponentInterface {
   /**
    * Which page that is selected.
    */
-  @Prop() selectedIndex: number = 1;
+  @Prop() selectedIndex: number = 0;
 
   /**
    * Total number of pages.
    */
   @Prop() pages: number = 0;
 
+  /**
+   * Pagination aria label to describe what type of nav it is.
+   * E.g "Pagination"
+   */
+  @Prop() paginationAriaLabel: string = "";
+
+  /**
+   * Will always included first and last page, plus "..." if exceeded.
+   */
   @Prop() maxAmountOfPagesShowing = 5;
   /**
-   * When set, set selectedIndex to event data.
+   * Emitted when clicking a page. Use event data to set selectedIndex.
    */
-  @Event() scoutPaginationClicked: EventEmitter<{
+  @Event() scoutPaginationClick: EventEmitter<{
     selectedIndex: number;
   }>;
 
   render() {
+    /**
+     * Returns backward button
+     */
+    const getBackwardPageButton = () => {
+      if (this.selectedIndex < 1) {
+        return null;
+      }
+      return (
+        <button
+          type="button"
+          onClick={() => {
+            this.scoutPaginationClick.emit({
+              selectedIndex: this.selectedIndex - 1,
+            });
+          }}
+          class="arrow"
+          innerHTML={backArrow}
+        ></button>
+      );
+    };
+
+    /**
+     * Returns forward button
+     */
+    const getForwardPageButton = () => {
+      if (this.selectedIndex + 1 === this.pages) {
+        return null;
+      }
+      return (
+        <button
+          type="button"
+          onClick={() => {
+            this.scoutPaginationClick.emit({
+              selectedIndex: this.selectedIndex + 1,
+            });
+          }}
+          class="arrow"
+          innerHTML={forwardArrow}
+        ></button>
+      );
+    };
+
+    /**
+     * Returns the pagination numbers
+     */
     const getPaginationButtons = () => {
       const noPagination = [...Array(this.pages)];
       if (this.pages <= this.maxAmountOfPagesShowing) {
@@ -46,7 +100,7 @@ export class ScoutPagination implements ComponentInterface {
           <button
             type="button"
             onClick={() =>
-              this.scoutPaginationClicked.emit({ selectedIndex: index })
+              this.scoutPaginationClick.emit({ selectedIndex: index })
             }
             class={{
               pageButton: true,
@@ -84,7 +138,7 @@ export class ScoutPagination implements ComponentInterface {
           <button
             type="button"
             onClick={() => {
-              this.scoutPaginationClicked.emit({ selectedIndex: page - 1 });
+              this.scoutPaginationClick.emit({ selectedIndex: page - 1 });
             }}
             class={{
               pageButton: true,
@@ -98,32 +152,11 @@ export class ScoutPagination implements ComponentInterface {
     };
 
     return (
-      <div class="pagination">
-        <button
-          type="button"
-          onClick={() => {
-            if (this.selectedIndex > 0) {
-              this.scoutPaginationClicked.emit({
-                selectedIndex: this.selectedIndex - 1,
-              });
-            }
-          }}
-          class="arrow"
-          innerHTML={backArrow}
-        ></button>
+      <nav aria-label={this.paginationAriaLabel} class="pagination">
+        {getBackwardPageButton()}
         {getPaginationButtons()}
-        <button
-          type="button"
-          onClick={() => {
-            if (this.selectedIndex < this.pages - 1)
-              this.scoutPaginationClicked.emit({
-                selectedIndex: this.selectedIndex - +1,
-              });
-          }}
-          class="arrow"
-          innerHTML={forwardArrow}
-        ></button>
-      </div>
+        {getForwardPageButton()}
+      </nav>
     );
   }
 }

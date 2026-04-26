@@ -7,8 +7,8 @@
 .arrow {
   display: flex;
   justify-content: center;
-  height: 24px;
-  width: 24px;
+  height: var(--spacing-6);
+  width: var(--spacing-6);
   border: none;
   background-color: transparent;
   margin: 0;
@@ -17,15 +17,17 @@
 }
 .pageButton {
   cursor: pointer;
-  flex: 1;
-  font-size: var(--text-body-sm);
-  border-radius: 50%;
+  font: var(--type-body-sm);
+  border-radius: 999px;
   background-color: white;
   outline: none;
-  height: 24px;
-  width: 24px;
+  height: var(--spacing-7);
+  width: var(--spacing-7);
   padding: 0;
   border: none;
+}
+.pageButton:focus-visible {
+  outline: 2px solid var(--color-neutral-500);
 }
 .pageButton:active {
   background-color: var(--color-neutral-200);
