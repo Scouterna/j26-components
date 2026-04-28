@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 4.2.1
+
+### Patch Changes
+
+- [`484a7aa`](https://github.com/Scouterna/j26-components/commit/484a7aa3d87910ac3646be0a7684bc1efd061900) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Use responsive values for inputs and buttons
+
 ## 4.2.0
 
 ### Minor Changes
