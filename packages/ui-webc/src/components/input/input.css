@@ -2,9 +2,9 @@
   position: relative;
   display: flex;
   height: var(--scout-input-height);
-  --scout-input-height: 44px;
+  --scout-input-height: 2.75rem;
   --scout-input-padding: var(--spacing-3);
-  --scout-input-border-radius: 14px;
+  --scout-input-border-radius: 0.875rem;
   --scout-input-type: var(--type-body-base);
   --scout-input-icon-size: var(--spacing-4);
 }
