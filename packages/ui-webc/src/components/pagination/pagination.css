@@ -1,0 +1,41 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.arrow {
+  display: flex;
+  justify-content: center;
+  height: var(--spacing-6);
+  width: var(--spacing-6);
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.pageButton {
+  cursor: pointer;
+  font: var(--type-body-sm);
+  border-radius: 999px;
+  background-color: white;
+  outline: none;
+  height: var(--spacing-7);
+  width: var(--spacing-7);
+  padding: 0;
+  border: none;
+}
+.pageButton:focus-visible {
+  outline: 2px solid var(--color-neutral-500);
+}
+.pageButton:active {
+  background-color: var(--color-neutral-200);
+}
+.pageButton:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-neutral-500);
+}
+.selected {
+  background-color: var(--color-neutral-200);
+}
