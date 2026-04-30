@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+}
+.skeleton {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-neutral-50);
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+.skeleton::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  animation: loading ease-in-out 3s infinite;
+}
