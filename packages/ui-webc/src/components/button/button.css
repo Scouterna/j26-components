@@ -60,17 +60,23 @@ scout-button {
     width: 1px;
   }
 
+  .button:disabled,
+  .button[aria-disabled="true"] {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
+
   .button.primary {
     background-color: var(--color-background-brand-base);
     color: var(--color-text-brand-inverse);
 
     @media (hover: hover) {
-      &:hover {
+      &:hover:not(:disabled, [aria-disabled="true"]) {
         background-color: var(--color-background-brand-hovered);
       }
     }
 
-    &:active {
+    &:active:not(:disabled, [aria-disabled="true"]) {
       background-color: var(--color-background-brand-pressed);
     }
   }
@@ -81,12 +87,12 @@ scout-button {
     color: var(--color-text-brand-base);
 
     @media (hover: hover) {
-      &:hover {
+      &:hover:not(:disabled, [aria-disabled="true"]) {
         background-color: var(--color-background-brand-subtle-hovered);
       }
     }
 
-    &:active {
+    &:active:not(:disabled, [aria-disabled="true"]) {
       background-color: var(--color-background-brand-subtle-pressed);
     }
   }
@@ -97,12 +103,12 @@ scout-button {
     color: var(--color-text-brand-base);
 
     @media (hover: hover) {
-      &:hover {
+      &:hover:not(:disabled, [aria-disabled="true"]) {
         background-color: var(--color-background-brand-subtle-hovered);
       }
     }
 
-    &:active {
+    &:active:not(:disabled, [aria-disabled="true"]) {
       background-color: var(--color-background-brand-subtle-pressed);
     }
   }
@@ -112,12 +118,12 @@ scout-button {
     color: var(--color-text-caution-bold-base);
 
     @media (hover: hover) {
-      &:hover {
+      &:hover:not(:disabled, [aria-disabled="true"]) {
         background-color: var(--color-background-caution-bold-hovered);
       }
     }
 
-    &:active {
+    &:active:not(:disabled, [aria-disabled="true"]) {
       background-color: var(--color-background-caution-bold-pressed);
     }
   }
@@ -127,12 +133,12 @@ scout-button {
     color: var(--color-text-danger-bold-base);
 
     @media (hover: hover) {
-      &:hover {
+      &:hover:not(:disabled, [aria-disabled="true"]) {
         background-color: var(--color-background-danger-bold-hovered);
       }
     }
 
-    &:active {
+    &:active:not(:disabled, [aria-disabled="true"]) {
       background-color: var(--color-background-danger-bold-pressed);
     }
   }

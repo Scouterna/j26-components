@@ -13,17 +13,18 @@ Will render a `<button>` element when the `type` is set to "button",
 
 ## Properties
 
-| Property       | Attribute       | Description                                                                   | Type                                                         | Default      |
-| -------------- | --------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------ | ------------ |
-| `href`         | `href`          |                                                                               | `string`                                                     | `undefined`  |
-| `icon`         | `icon`          | An optional icon to display alongside the button text. Must be an SVG string. | `string`                                                     | `undefined`  |
-| `iconOnly`     | `icon-only`     |                                                                               | `boolean`                                                    | `false`      |
-| `iconPosition` | `icon-position` |                                                                               | `"after" \| "before"`                                        | `"after"`    |
-| `rel`          | `rel`           |                                                                               | `string`                                                     | `undefined`  |
-| `size`         | `size`          | Size of the button.                                                           | `"large" \| "medium"`                                        | `"medium"`   |
-| `target`       | `target`        |                                                                               | `string`                                                     | `undefined`  |
-| `type`         | `type`          |                                                                               | `"button" \| "link" \| "reset" \| "submit"`                  | `"button"`   |
-| `variant`      | `variant`       | The variant primarily affects the color of the button.                        | `"caution" \| "danger" \| "outlined" \| "primary" \| "text"` | `"outlined"` |
+| Property       | Attribute       | Description                                                                                     | Type                                                         | Default      |
+| -------------- | --------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ------------ |
+| `disabled`     | `disabled`      | Whether the button is disabled. Disabled buttons are not clickable and excluded from tab order. | `boolean`                                                    | `false`      |
+| `href`         | `href`          |                                                                                                 | `string`                                                     | `undefined`  |
+| `icon`         | `icon`          | An optional icon to display alongside the button text. Must be an SVG string.                   | `string`                                                     | `undefined`  |
+| `iconOnly`     | `icon-only`     |                                                                                                 | `boolean`                                                    | `false`      |
+| `iconPosition` | `icon-position` |                                                                                                 | `"after" \| "before"`                                        | `"after"`    |
+| `rel`          | `rel`           |                                                                                                 | `string`                                                     | `undefined`  |
+| `size`         | `size`          | Size of the button.                                                                             | `"large" \| "medium"`                                        | `"medium"`   |
+| `target`       | `target`        |                                                                                                 | `string`                                                     | `undefined`  |
+| `type`         | `type`          |                                                                                                 | `"button" \| "link" \| "reset" \| "submit"`                  | `"button"`   |
+| `variant`      | `variant`       | The variant primarily affects the color of the button.                                          | `"caution" \| "danger" \| "outlined" \| "primary" \| "text"` | `"outlined"` |
 
 
 ## Events

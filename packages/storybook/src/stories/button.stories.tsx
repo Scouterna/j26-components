@@ -67,6 +67,14 @@ export const Link = meta.story({
   render: (args) => <ScoutButton {...args}>Open Google</ScoutButton>,
 });
 
+export const Disabled = meta.story({
+  args: {
+    variant: "primary",
+    disabled: true,
+  },
+  render: (args) => <ScoutButton {...args}>Sign in</ScoutButton>,
+});
+
 export const IconOnly = meta.story({
   args: {
     icon: ArrowLeftIcon,

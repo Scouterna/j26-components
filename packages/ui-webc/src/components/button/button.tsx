@@ -43,6 +43,12 @@ export class ScoutButton {
   @Prop() iconPosition: "before" | "after" = "after";
   @Prop() iconOnly: boolean = false;
 
+  /**
+   * Whether the button is disabled. Disabled buttons are not clickable and
+   * excluded from tab order. Use only when absolutely necessary.
+   */
+  @Prop() disabled: boolean = false;
+
   @Event() scoutClick!: EventEmitter<void>;
 
   render() {
@@ -51,15 +57,17 @@ export class ScoutButton {
     const props =
       this.type === "link"
         ? {
-            href: this.href,
+            href: this.disabled ? undefined : this.href,
             target: this.target,
             // This might not be our job, but better safe than sorry.
             rel:
               this.rel ??
               (this.target === "_blank" ? "noopener noreferrer" : undefined),
+            "aria-disabled": this.disabled ? "true" : undefined,
           }
         : {
             type: this.type,
+            disabled: this.disabled,
           };
 
     const icon = this.icon && <span class="icon" innerHTML={this.icon} />;
@@ -73,7 +81,13 @@ export class ScoutButton {
       >
         <Tag
           class={`button ${this.variant}`}
-          onClick={() => this.scoutClick.emit()}
+          onClick={(e) => {
+            if (this.disabled) {
+              e.preventDefault();
+              return;
+            }
+            this.scoutClick.emit();
+          }}
           {...props}
         >
           {this.iconPosition === "before" && icon}
