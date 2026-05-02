@@ -118,6 +118,7 @@ export class ScoutInput
   @Watch("value")
   watchValue(newVal: string) {
     this._hasValue = !!newVal;
+    this.emitValidityEvent(newVal);
   }
 
   onInput() {

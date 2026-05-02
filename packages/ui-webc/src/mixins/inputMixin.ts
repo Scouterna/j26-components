@@ -90,9 +90,9 @@ export const inputMixin = <B extends MixedInCtor>(Base: B) => {
       this._scoutInvalid.emit();
     }
 
-    emitValidityEvent() {
+    emitValidityEvent(value?: string) {
       this.scoutValidate.emit({
-        value: this.#inputElement.value,
+        value: value ?? this.#inputElement.value,
         element: this.#inputElement,
       });
     }
