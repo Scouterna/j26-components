@@ -61,6 +61,8 @@ export class ScoutSegmentedControl implements ComponentInterface {
 
   @Element() el!: HTMLElement;
 
+  private resizeObserver?: ResizeObserver;
+
   render() {
     const sizeClass = this.size === "small" ? "small" : "";
     const noTransitionClass = this.enableAnimations ? "" : "no-transition";
@@ -77,9 +79,22 @@ export class ScoutSegmentedControl implements ComponentInterface {
     this.updateChildrenAttributes();
     this.calculateIndicatorSizes();
 
+    // Re-measure the indicator whenever the host (and therefore the slotted
+    // buttons) is resized — for example when the component is placed inside a
+    // flex parent that redistributes space after mount, or when the viewport
+    // changes. Without this, the indicator stays at its mount-time width.
+    this.resizeObserver = new ResizeObserver(() =>
+      this.calculateIndicatorSizes(),
+    );
+    this.resizeObserver.observe(this.el);
+
     requestAnimationFrame(() => {
       this.enableAnimations = true;
     });
+  }
+
+  disconnectedCallback() {
+    this.resizeObserver?.disconnect();
   }
 
   getIndicator() {
