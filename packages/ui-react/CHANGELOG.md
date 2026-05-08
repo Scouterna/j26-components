@@ -1,5 +1,12 @@
 # @scouterna/ui-react
 
+## 4.3.1
+
+### Patch Changes
+
+- Updated dependencies [[`2ca4664`](https://github.com/Scouterna/j26-components/commit/2ca4664ebe91032c29682b3b13c0c80a4ea5e081)]:
+  - @scouterna/ui-webc@4.3.1
+
 ## 4.3.0
 
 ### Minor Changes
