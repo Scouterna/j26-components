@@ -1,5 +1,13 @@
 # @scouterna/ui-webc
 
+## 4.3.2
+
+### Patch Changes
+
+- [`4e884ff`](https://github.com/Scouterna/j26-components/commit/4e884ff1af1822cdd6fa84d145ab279f4fc918ef) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Surface types in exports field
+
+- [`4d8aa7d`](https://github.com/Scouterna/j26-components/commit/4d8aa7d89733e6536ef274b658ddeb3f04cfca01) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Fix checkbox size when on scaled screens
+
 ## 4.3.1
 
 ### Patch Changes
