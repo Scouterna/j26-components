@@ -45,13 +45,15 @@ export class ScoutListViewItem {
 
   @Event() scoutClick!: EventEmitter<void>;
 
+  @Event() scoutChecked!: EventEmitter<{
+    checked: boolean;
+    element: HTMLInputElement;
+  }>;
+
   render() {
-    const Tag =
-      this.type === "link"
-        ? "a"
-        : this.type === "radio" || this.type === "checkbox"
-          ? "label"
-          : "button";
+    const isSelectable = this.type === "radio" || this.type === "checkbox";
+
+    const Tag = this.type === "link" ? "a" : isSelectable ? "label" : "button";
 
     const linkProps =
       this.type === "link"
@@ -70,7 +72,7 @@ export class ScoutListViewItem {
         <Tag
           class="button"
           {...linkProps}
-          onClick={() => this.scoutClick.emit()}
+          onClick={!isSelectable ? () => this.scoutClick.emit() : undefined}
         >
           {this.getPrefix()}
           {this.getContent()}
@@ -106,6 +108,7 @@ export class ScoutListViewItem {
           checked={this.checked}
           disabled={this.disabled}
           label=""
+          onScoutChecked={(e) => this.scoutChecked.emit(e.detail)}
         />
       );
     }
@@ -117,6 +120,7 @@ export class ScoutListViewItem {
           value={this.value}
           checked={this.checked}
           disabled={this.disabled}
+          onScoutChecked={(e) => this.scoutChecked.emit(e.detail)}
         />
       );
     }

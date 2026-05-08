@@ -23,9 +23,10 @@
 
 ## Events
 
-| Event        | Description | Type                |
-| ------------ | ----------- | ------------------- |
-| `scoutClick` |             | `CustomEvent<void>` |
+| Event          | Description | Type                                                            |
+| -------------- | ----------- | --------------------------------------------------------------- |
+| `scoutChecked` |             | `CustomEvent<{ checked: boolean; element: HTMLInputElement; }>` |
+| `scoutClick`   |             | `CustomEvent<void>`                                             |
 
 
 ## Dependencies
