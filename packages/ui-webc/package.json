@@ -12,7 +12,8 @@
   "exports": {
     ".": {
       "import": "./dist/ui-webc/ui-webc.esm.js",
-      "require": "./dist/ui-webc/ui-webc.cjs.js"
+      "require": "./dist/ui-webc/ui-webc.cjs.js",
+      "types": "./dist/types/index.d.ts"
     },
     "./style.css": {
       "import": "./dist/ui-webc/ui-webc.css",
