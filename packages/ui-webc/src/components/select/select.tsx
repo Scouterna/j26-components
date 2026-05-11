@@ -63,6 +63,7 @@ export class ScoutSelect
   }
 
   componentDidLoad() {
+    super.componentDidLoad();
     this.syncOptions();
 
     // Stencil's scoped-slot polyfill places slotted children at the host root,
