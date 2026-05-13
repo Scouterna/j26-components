@@ -1,5 +1,16 @@
 # @scouterna/ui-react
 
+## 4.3.3
+
+### Patch Changes
+
+- [#117](https://github.com/Scouterna/j26-components/pull/117) [`1ac2ef0`](https://github.com/Scouterna/j26-components/commit/1ac2ef0f8985394ffdf65724caf10ebc21e99787) Thanks [@m4reko](https://github.com/m4reko)! - Make select component render options in correct location in shadow dom.
+
+- [#116](https://github.com/Scouterna/j26-components/pull/116) [`11f225e`](https://github.com/Scouterna/j26-components/commit/11f225e5a095e31142b4722ce3f1c52777b44b7b) Thanks [@m4reko](https://github.com/m4reko)! - Recalculate Segmented Control indicator size on resize.
+
+- Updated dependencies [[`1ac2ef0`](https://github.com/Scouterna/j26-components/commit/1ac2ef0f8985394ffdf65724caf10ebc21e99787), [`11f225e`](https://github.com/Scouterna/j26-components/commit/11f225e5a095e31142b4722ce3f1c52777b44b7b)]:
+  - @scouterna/ui-webc@4.3.3
+
 ## 4.3.2
 
 ### Patch Changes
