@@ -62,15 +62,21 @@ export class ScoutSegmentedControl implements ComponentInterface {
   @Element() el!: HTMLElement;
 
   private resizeObserver?: ResizeObserver;
+  private wrapperEl?: HTMLDivElement;
 
   render() {
     const sizeClass = this.size === "small" ? "small" : "";
     const noTransitionClass = this.enableAnimations ? "" : "no-transition";
 
     return (
-      <Host class={`${sizeClass} ${noTransitionClass}`}>
-        <slot />
-        {this.getIndicator()}
+      <Host>
+        <div
+          class={`wrapper ${sizeClass} ${noTransitionClass}`}
+          ref={(el) => { this.wrapperEl = el as HTMLDivElement; }}
+        >
+          <slot />
+          {this.getIndicator()}
+        </div>
       </Host>
     );
   }
@@ -79,14 +85,14 @@ export class ScoutSegmentedControl implements ComponentInterface {
     this.updateChildrenAttributes();
     this.calculateIndicatorSizes();
 
-    // Re-measure the indicator whenever the host (and therefore the slotted
+    // Re-measure the indicator whenever the wrapper (and therefore the slotted
     // buttons) is resized — for example when the component is placed inside a
     // flex parent that redistributes space after mount, or when the viewport
     // changes. Without this, the indicator stays at its mount-time width.
     this.resizeObserver = new ResizeObserver(() =>
       this.calculateIndicatorSizes(),
     );
-    this.resizeObserver.observe(this.el);
+    if (this.wrapperEl) this.resizeObserver.observe(this.wrapperEl);
 
     requestAnimationFrame(() => {
       this.enableAnimations = true;
@@ -94,8 +100,8 @@ export class ScoutSegmentedControl implements ComponentInterface {
   }
 
   connectedCallback() {
-    if (this.resizeObserver) {
-      this.resizeObserver.observe(this.el);
+    if (this.resizeObserver && this.wrapperEl) {
+      this.resizeObserver.observe(this.wrapperEl);
       this.calculateIndicatorSizes();
     }
   }
@@ -142,8 +148,9 @@ export class ScoutSegmentedControl implements ComponentInterface {
 
   @Watch("value")
   calculateIndicatorSizes() {
-    // Get left padding of container
-    const baseLeft = parseFloat(getComputedStyle(this.el).paddingLeft) || 0;
+    const baseLeft = this.wrapperEl
+      ? parseFloat(getComputedStyle(this.wrapperEl).paddingLeft) || 0
+      : 0;
 
     this.widths = Array.from(this.el.children).map(
       (child) => (child as HTMLElement).offsetWidth,

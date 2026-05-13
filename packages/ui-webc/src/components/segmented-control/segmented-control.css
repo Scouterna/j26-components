@@ -1,4 +1,9 @@
 :host {
+  display: block;
+  width: 100%;
+}
+
+.wrapper {
   position: relative;
   width: 100%;
   display: flex;
@@ -12,7 +17,7 @@
   --button-padding: var(--spacing-3);
 }
 
-:host(.small) {
+.wrapper.small {
   height: var(--spacing-8);
   font: var(--type-body-sm);
 
@@ -63,5 +68,6 @@
 }
 
 ::slotted(button[aria-checked="true"]) {
-  color: var(--color-text-brand-inverse);
+  /* biome-ignore lint/complexity/noImportantStyles: We need this because the global styles takes precedence over the webc styles */
+  color: var(--color-text-brand-inverse) !important;
 }
