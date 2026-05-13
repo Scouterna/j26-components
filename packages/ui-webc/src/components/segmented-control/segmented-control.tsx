@@ -93,6 +93,13 @@ export class ScoutSegmentedControl implements ComponentInterface {
     });
   }
 
+  connectedCallback() {
+    if (this.resizeObserver) {
+      this.resizeObserver.observe(this.el);
+      this.calculateIndicatorSizes();
+    }
+  }
+
   disconnectedCallback() {
     this.resizeObserver?.disconnect();
   }
