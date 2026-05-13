@@ -79,6 +79,13 @@ export class ScoutSelect
     this.optionObserver.observe(this.el, { childList: true });
   }
 
+  connectedCallback() {
+    if (this.optionObserver) {
+      this.optionObserver.observe(this.el, { childList: true });
+      this.syncOptions();
+    }
+  }
+
   disconnectedCallback() {
     this.optionObserver?.disconnect();
   }
