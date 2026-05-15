@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 4.3.5
+
+### Patch Changes
+
+- [`bc87881`](https://github.com/Scouterna/j26-components/commit/bc878819d876a046e42b9ef8f65676641d0a51e0) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Make app bar prefix/suffix buttons not overlay title on iOS.
+
 ## 4.3.4
 
 ### Patch Changes
