@@ -8,11 +8,11 @@
   height: 100% !important;
 }
 
-.prefix.has-content {
-  margin-left: calc(var(--spacing-3) * -1);
+.container.has-prefix {
+  padding-left: var(--spacing-1);
 }
-.suffix.has-content {
-  margin-right: calc(var(--spacing-3) * -1);
+.container.has-suffix {
+  padding-right: var(--spacing-1);
 }
 
 .container {

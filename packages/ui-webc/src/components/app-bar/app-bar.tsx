@@ -33,12 +33,14 @@ export class ScoutAppBar {
     };
 
     return (
-      <header class="container">
-        <div class={`prefix ${this.hasPrefix ? "has-content" : ""}`.trim()}>
+      <header
+        class={`container ${this.hasPrefix ? "has-prefix" : ""} ${this.hasSuffix ? "has-suffix" : ""}`.trim()}
+      >
+        <div class="prefix">
           <slot name="prefix" onSlotchange={onSlotChange("hasPrefix")} />
         </div>
         <div class="title">{this.titleText}</div>
-        <div class={`suffix ${this.hasSuffix ? "has-content" : ""}`.trim()}>
+        <div class="suffix">
           <slot name="suffix" onSlotchange={onSlotChange("hasSuffix")} />
         </div>
       </header>

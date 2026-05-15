@@ -72,7 +72,9 @@ export class ScoutSegmentedControl implements ComponentInterface {
       <Host>
         <div
           class={`wrapper ${sizeClass} ${noTransitionClass}`}
-          ref={(el) => { this.wrapperEl = el as HTMLDivElement; }}
+          ref={(el) => {
+            this.wrapperEl = el as HTMLDivElement;
+          }}
         >
           <slot />
           {this.getIndicator()}
