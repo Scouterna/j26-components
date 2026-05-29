@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 4.3.7
+
+### Patch Changes
+
+- [`64a70cc`](https://github.com/Scouterna/j26-components/commit/64a70cca159243daa9e1702b5212ca36e6504c40) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Add autocomplete prop to input component.
+
 ## 4.3.6
 
 ### Patch Changes
