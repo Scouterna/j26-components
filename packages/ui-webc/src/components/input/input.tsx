@@ -100,6 +100,15 @@ export class ScoutInput
   @Prop() placeholder?: string;
 
   /**
+   * Hint for the browser's autocomplete feature. Maps directly to the native
+   * `autocomplete` attribute. Use `"off"` to disable autocomplete, or any
+   * autofill detail token such as `"name"`, `"email"`, `"current-password"`,
+   * etc. See MDN for the full list:
+   * https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+   */
+  @Prop() autocomplete?: string;
+
+  /**
    * Raw SVG string for an icon to display at the leading edge of the input.
    * Import with the `?raw` suffix, e.g. `import searchIcon from
    * "@tabler/icons/outline/search.svg?raw"`.
@@ -178,6 +187,7 @@ export class ScoutInput
           value={this.value}
           disabled={this.disabled}
           placeholder={this.placeholder}
+          autoComplete={this.autocomplete}
           onInput={() => this.onInput()}
           onBlur={() => this.onBlur()}
           onInvalid={() => this.onInvalid()}

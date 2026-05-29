@@ -53,6 +53,15 @@ export const WithDefaultValue = meta.story({
   render: (args) => <ScoutInput {...args} />,
 });
 
+export const WithAutocomplete = meta.story({
+  args: {
+    autocomplete: "email",
+    placeholder: "E-post",
+    type: "email",
+  },
+  render: (args) => <ScoutInput {...args} />,
+});
+
 export const SearchExample = meta.story({
   args: {
     icon: SearchIcon,
