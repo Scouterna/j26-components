@@ -1,6 +1,6 @@
 {
   "name": "@scouterna/ui-webc",
-  "version": "4.3.6",
+  "version": "4.3.7",
   "type": "module",
   "description": "Scouterna Design System Web Components",
   "main": "dist/index.cjs.js",
