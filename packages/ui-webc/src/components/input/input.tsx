@@ -78,6 +78,13 @@ export class ScoutInput
    */
   @Prop() value: string = "";
 
+  /**
+   * Initial value of the input element for uncontrolled usage. Unlike `value`,
+   * this only sets the value on first render and does not keep the input in
+   * sync with the prop afterwards.
+   */
+  @Prop() defaultValue?: string;
+
   @Prop() name!: string;
 
   /**
@@ -112,7 +119,14 @@ export class ScoutInput
 
   componentWillLoad() {
     super.componentWillLoad();
-    this._hasValue = !!this.value;
+    this._hasValue = !!(this.value || this.defaultValue);
+  }
+
+  componentDidLoad() {
+    super.componentDidLoad();
+    if (this.defaultValue) {
+      this.nativeInput.value = this.defaultValue;
+    }
   }
 
   @Watch("value")

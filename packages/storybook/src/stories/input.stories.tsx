@@ -46,6 +46,13 @@ export const WithClear = BasicExample.extend({
   },
 });
 
+export const WithDefaultValue = meta.story({
+  args: {
+    defaultValue: "Super duper",
+  },
+  render: (args) => <ScoutInput {...args} />,
+});
+
 export const SearchExample = meta.story({
   args: {
     icon: SearchIcon,
