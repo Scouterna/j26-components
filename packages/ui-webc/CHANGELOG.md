@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 4.4.0
+
+### Minor Changes
+
+- [`57d1027`](https://github.com/Scouterna/j26-components/commit/57d10274bb0585133a72d9ef159b6dfe1f0c3f9a) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Add loading prop to button component.
+
 ## 4.3.7
 
 ### Patch Changes
