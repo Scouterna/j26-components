@@ -75,6 +75,15 @@ export const Disabled = meta.story({
   render: (args) => <ScoutButton {...args}>Sign in</ScoutButton>,
 });
 
+export const Loading = meta.story({
+  args: {
+    variant: "primary",
+    loading: true,
+    icon: LockIcon,
+  },
+  render: (args) => <ScoutButton {...args}>Sign in</ScoutButton>,
+});
+
 export const IconOnly = meta.story({
   args: {
     icon: ArrowLeftIcon,

@@ -6,6 +6,7 @@ import {
   h,
   Prop,
 } from "@stencil/core";
+import Loader2Icon from "@tabler/icons/outline/loader-2.svg";
 
 export type Size = "medium" | "large";
 export type Variant = "primary" | "outlined" | "text" | "caution" | "danger";
@@ -49,25 +50,32 @@ export class ScoutButton {
    */
   @Prop() disabled: boolean = false;
 
+  /**
+   * Whether the button is in a loading state. Shows a centered spinner and hides content.
+   */
+  @Prop() loading: boolean = false;
+
   @Event() scoutClick!: EventEmitter<void>;
 
   render() {
     const Tag = this.type === "link" ? "a" : "button";
 
+    const isDisabled = this.disabled || this.loading;
+
     const props =
       this.type === "link"
         ? {
-            href: this.disabled ? undefined : this.href,
+            href: isDisabled ? undefined : this.href,
             target: this.target,
             // This might not be our job, but better safe than sorry.
             rel:
               this.rel ??
               (this.target === "_blank" ? "noopener noreferrer" : undefined),
-            "aria-disabled": this.disabled ? "true" : undefined,
+            "aria-disabled": isDisabled ? "true" : undefined,
           }
         : {
             type: this.type,
-            disabled: this.disabled,
+            disabled: isDisabled,
           };
 
     const icon = this.icon && <span class="icon" innerHTML={this.icon} />;
@@ -78,11 +86,12 @@ export class ScoutButton {
         // removes them sometimes. Hopefully we can find a proper fix later.
         data-size={this.size}
         data-icon-only={this.iconOnly}
+        data-loading={this.loading}
       >
         <Tag
           class={`button ${this.variant}`}
           onClick={(e) => {
-            if (this.disabled) {
+            if (isDisabled) {
               e.preventDefault();
               return;
             }
@@ -95,6 +104,10 @@ export class ScoutButton {
             <slot />
           </span>
           {this.iconPosition === "after" && icon}
+          <span
+            class="spinner"
+            style={{ "--icon-url": `url(${Loader2Icon})` }}
+          />
         </Tag>
       </Host>
     );
