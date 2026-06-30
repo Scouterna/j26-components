@@ -1,6 +1,6 @@
 {
   "name": "@scouterna/tailwind-theme",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Scouterna Design System Tailwind CSS Theme",
   "main": "theme.css",
   "module": "theme.css",

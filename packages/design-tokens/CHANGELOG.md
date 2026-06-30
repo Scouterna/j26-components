@@ -1,5 +1,11 @@
 # @scouterna/design-tokens
 
+## 0.0.7
+
+### Patch Changes
+
+- [`ce175a5`](https://github.com/Scouterna/j26-components/commit/ce175a50f8d42feef295d99d7a8952375290b875) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Add xs variants to body and label typographies.
+
 ## 0.0.6
 
 ### Patch Changes

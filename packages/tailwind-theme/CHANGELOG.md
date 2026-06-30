@@ -1,5 +1,12 @@
 # @scouterna/tailwind-theme
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [[`ce175a5`](https://github.com/Scouterna/j26-components/commit/ce175a50f8d42feef295d99d7a8952375290b875)]:
+  - @scouterna/design-tokens@0.0.7
+
 ## 0.0.5
 
 ### Patch Changes
