@@ -32,8 +32,8 @@
   position: absolute;
   top: var(--spacing-2);
   bottom: var(--spacing-2);
-  right: var(--spacing-2);
-  left: var(--spacing-2);
+  right: var(--spacing-1);
+  left: var(--spacing-1);
   background-color: var(--color-blue-50);
   border-radius: var(--spacing-4);
   z-index: -1;
