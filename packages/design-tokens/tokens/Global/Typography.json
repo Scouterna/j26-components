@@ -13,6 +13,18 @@
         "$type": "typography",
         "$description": ""
       },
+      "xs": {
+        "$value": {
+          "fontFamilies": [
+            "{fontfamily.sans}"
+          ],
+          "fontSizes": "{fontsize.xs}",
+          "fontWeights": "400",
+          "lineHeights": "1.5"
+        },
+        "$type": "typography",
+        "$description": ""
+      },
       "sm": {
         "$value": {
           "fontFamilies": [
@@ -155,6 +167,18 @@
             "{fontfamily.sans}"
           ],
           "fontSizes": "{fontsize.lg}",
+          "fontWeights": "400",
+          "lineHeights": "1.2"
+        },
+        "$type": "typography",
+        "$description": ""
+      },
+      "xs": {
+        "$value": {
+          "fontFamilies": [
+            "{fontfamily.sans}"
+          ],
+          "fontSizes": "{fontsize.xs}",
           "fontWeights": "400",
           "lineHeights": "1.2"
         },
