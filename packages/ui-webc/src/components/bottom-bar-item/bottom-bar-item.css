@@ -45,7 +45,7 @@
 }
 
 .button .label {
-  font: var(--type-label-sm);
+  font: var(--type-label-xs);
 }
 
 a {
