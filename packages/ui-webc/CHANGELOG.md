@@ -1,5 +1,16 @@
 # @scouterna/ui-webc
 
+## 4.4.1
+
+### Patch Changes
+
+- [`5cc1e6c`](https://github.com/Scouterna/j26-components/commit/5cc1e6cdb65144ad14325e392441831df089d99c) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Made text size smaller for bottom bar.
+
+- [`f235b12`](https://github.com/Scouterna/j26-components/commit/f235b127f482c8a6092072c864e07bfed041634c) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Make bottom bar items highlight a bit wider.
+
+- Updated dependencies [[`ce175a5`](https://github.com/Scouterna/j26-components/commit/ce175a50f8d42feef295d99d7a8952375290b875)]:
+  - @scouterna/design-tokens@0.0.7
+
 ## 4.4.0
 
 ### Minor Changes
