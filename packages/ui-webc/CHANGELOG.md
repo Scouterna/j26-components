@@ -1,5 +1,13 @@
 # @scouterna/ui-webc
 
+## 4.4.2
+
+### Patch Changes
+
+- [`0cb4c17`](https://github.com/Scouterna/j26-components/commit/0cb4c17ad99d7ef558f1b9d63dbd8dfe5422f0d5) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Fix drawer click-through bug and minor visual improvements.
+
+- [`ce97bd9`](https://github.com/Scouterna/j26-components/commit/ce97bd92e263a7d98c68a72b564a9e4784b26a79) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Make select match height of other inputs
+
 ## 4.4.1
 
 ### Patch Changes
