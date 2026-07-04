@@ -62,6 +62,12 @@ export class ScoutDrawer implements ComponentInterface {
   @State() drawerState: "opening" | "closing" | "open" | "closed" = "closed";
   @State() focusedNode: Element | null = null;
 
+  private slotRef?: HTMLSlotElement;
+  // Stable reference required: dom-focus-lock's `off` removes a trap by
+  // identity (`node !== domNode`), so `on`/`off` must be called with the
+  // exact same array instance.
+  private readonly focusTrapNodes: HTMLElement[] = [];
+
   componentWillLoad(): Promise<void> | void {
     this.focusedNode = document.activeElement;
   }
@@ -104,11 +110,36 @@ export class ScoutDrawer implements ComponentInterface {
 
     if (open) {
       this.drawerState = "opening";
-      focusLock.on(drawer);
+      this.updateFocusTrapNodes();
+      focusLock.on(this.focusTrapNodes);
     } else {
-      focusLock.off(drawer);
+      focusLock.off(this.focusTrapNodes);
       this.drawerState = "closing";
     }
+  }
+
+  /**
+   * dom-focus-lock's containment check treats any node that has its own
+   * shadow root as opaque: it only looks inside that node's shadow root and
+   * never at its light-DOM (slotted) children. This component has both
+   * shadow-internal buttons (back/exit) and arbitrary slotted content, so
+   * neither `rootElement` nor the internal `.drawer--container` works as a
+   * single trap target — either one makes the check blind to the other kind
+   * of content, and slotted inputs never register as focused, breaking the
+   * trap by yanking focus back to the exit button on every click. Handing
+   * the lock the concrete focusable roots directly (the shadow buttons, plus
+   * the slot's actual assigned elements) works because none of those nodes
+   * have their own shadow root, so native containment resolves correctly.
+   */
+  private updateFocusTrapNodes() {
+    const shadowButtons = Array.from(
+      this.rootElement.shadowRoot?.querySelectorAll<HTMLElement>(
+        ".exit-button, .back-button",
+      ) ?? [],
+    );
+    const slotted = (this.slotRef?.assignedElements() ?? []) as HTMLElement[];
+    this.focusTrapNodes.length = 0;
+    this.focusTrapNodes.push(...shadowButtons, ...slotted);
   }
 
   render() {
@@ -169,7 +200,11 @@ export class ScoutDrawer implements ComponentInterface {
             </div>
           )}
           <div class={!this.disableContentPadding ? `content--wrapper` : ""}>
-            <slot />
+            <slot
+              ref={(el) => {
+                this.slotRef = el as HTMLSlotElement;
+              }}
+            />
           </div>
         </div>
       </div>
