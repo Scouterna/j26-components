@@ -6,7 +6,7 @@
 
 .select {
   width: 100%;
-  height: var(--spacing-10);
+  height: var(--spacing-11);
   padding: var(--spacing-2);
   padding-right: var(--spacing-8);
   font: var(--type-body-base);

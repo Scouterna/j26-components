@@ -6,7 +6,7 @@
 
 scout-button {
   display: inline-block;
-  height: 2.75rem;
+  height: var(--spacing-11);
   font: var(--type-body-base);
 
   &[data-size="large"] {
