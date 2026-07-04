@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 4.4.3
+
+### Patch Changes
+
+- [`d1fd886`](https://github.com/Scouterna/j26-components/commit/d1fd886ffeb687bca7154ea22f70c7f6e79f0a4a) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Fix focus lock breaking focus in drawer.
+
 ## 4.4.2
 
 ### Patch Changes
