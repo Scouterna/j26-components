@@ -13,7 +13,7 @@
   width: 100%;
   transform: translateY(100%);
   background-color: #fefefe;
-  box-shadow: 0 0 20px 3px var(--color-gray-200);
+  box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.15);
   border-top-left-radius: var(--spacing-5);
   border-top-right-radius: var(--spacing-5);
   overflow: hidden;
@@ -77,15 +77,15 @@
     min-height: 600px;
     width: 430px;
     transform: translateX(100%);
-    border-top-left-radius: var(--spacing-5);
-    border-bottom-left-radius: var(--spacing-5);
+    border-top-left-radius: var(--spacing-3);
+    border-bottom-left-radius: var(--spacing-3);
     border-top-right-radius: 0;
   }
   .open {
-    animation: drawerOpen 0.3s ease-in-out forwards;
+    animation: drawerOpen 0.2s ease-in-out forwards;
   }
   .close {
-    animation: drawerClose 0.3s ease-in-out forwards;
+    animation: drawerClose 0.2s ease-in-out forwards;
   }
 }
 
@@ -102,12 +102,13 @@
 
 .backdrop-hidden {
   opacity: 0;
+  pointer-events: none;
 }
 
 .backdrop-visible {
-  opacity: 0.6;
+  opacity: 0.3;
   pointer-events: all;
-  background-color: var(--color-gray-200);
+  background-color: var(--color-black);
 }
 
 /**
