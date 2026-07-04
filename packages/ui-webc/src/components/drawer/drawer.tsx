@@ -202,7 +202,18 @@ export class ScoutDrawer implements ComponentInterface {
           <div class={!this.disableContentPadding ? `content--wrapper` : ""}>
             <slot
               ref={(el) => {
-                this.slotRef = el as HTMLSlotElement;
+                const slot = el as HTMLSlotElement | undefined;
+                if (slot && slot !== this.slotRef) {
+                  // The consumer's top-level slotted node can be swapped out
+                  // entirely (e.g. a form replaced by a loading indicator)
+                  // while the drawer stays open, which doesn't trigger the
+                  // `open` watcher. `slotchange` fires whenever the directly
+                  // assigned node(s) change, so re-sync the trap then too.
+                  slot.addEventListener("slotchange", () =>
+                    this.updateFocusTrapNodes(),
+                  );
+                }
+                this.slotRef = slot;
               }}
             />
           </div>
