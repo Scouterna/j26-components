@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 4.4.4
+
+### Patch Changes
+
+- [`b602c94`](https://github.com/Scouterna/j26-components/commit/b602c942429e6a2bcec95ab9995d68b5796415d5) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Keep drawer focus trap in sync when slotted content is replaced.
+
 ## 4.4.3
 
 ### Patch Changes
