@@ -7,4 +7,5 @@ export * as Input from "./components/input/input.js";
 export * as Menu from "./components/menu/menu.js";
 export * as Select from "./components/select/select.js";
 export * as Table from "./components/table/table.js";
+export * as Textarea from "./components/textarea/textarea.js";
 export * as Toast from "./components/toast/toast.js";

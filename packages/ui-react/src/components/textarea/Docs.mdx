@@ -1,0 +1,18 @@
+import { Meta, Primary, Controls } from '@storybook/addon-docs';
+import stories from './textarea.stories'
+
+<Meta of={stories} />
+
+# Textarea
+
+The Textarea component is used to retrieve multiline user input.
+
+Note that the Textarea component has no `placeholder` prop. Placeholders are
+generally considered bad accessibility practice since the placeholder text
+disappears when the user starts typing. It's also hard to design them in such a
+way that the text has sufficient contrast. Instead, use the
+[FormField](?path=/story/components-form-field--with-input) component to show a
+descriptive label for the textarea.
+
+<Primary />
+<Controls />
