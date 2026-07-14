@@ -55,7 +55,10 @@ export class ScoutTextArea
 
   /**
    * Hint for the browser's autocomplete feature. Maps directly to the native
-   * `autocomplete` attribute.
+   * `autocomplete` attribute. Use `"off"` to disable autocomplete, or any
+   * autofill detail token such as `"name"`, `"email"`, `"street-address"`,
+   * etc. See MDN for the full list:
+   * https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
    */
   @Prop() autocomplete?: string;
 
