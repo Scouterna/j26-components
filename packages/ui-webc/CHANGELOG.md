@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 4.5.0
+
+### Minor Changes
+
+- [#130](https://github.com/Scouterna/j26-components/pull/130) [`dd34fd2`](https://github.com/Scouterna/j26-components/commit/dd34fd232a6f5214672ec9c7d3d6fcb51340b020) Thanks [@Anna-Qvil](https://github.com/Anna-Qvil)! - Add text-area component.
+
 ## 4.4.4
 
 ### Patch Changes
