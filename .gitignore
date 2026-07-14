@@ -3,6 +3,10 @@ node_modules/
 .pnp
 .pnp.js
 
+# This is a pnpm workspace; npm/yarn lockfiles are stray artifacts
+package-lock.json
+yarn.lock
+
 # Build outputs
 dist/
 .stencil/
