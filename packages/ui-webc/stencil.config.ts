@@ -12,6 +12,11 @@ export const config: Config = {
   globalStyle: "src/global/global.css",
   extras: {
     addGlobalStyleToComponents: true,
+    // Fixes React clobbering the internal render output of non-shadow
+    // (encapsulation: "none") components when it updates slotted children.
+    // Enables slotChildNodesFix, which addresses stenciljs/core#2259.
+    // Slated to become the default in Stencil v5.
+    experimentalSlotFixes: true,
   },
   outputTargets: [
     reactOutputTarget({
