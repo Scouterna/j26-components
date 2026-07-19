@@ -1,5 +1,11 @@
 # @scouterna/ui-webc
 
+## 4.5.1
+
+### Patch Changes
+
+- [`d6688a3`](https://github.com/Scouterna/j26-components/commit/d6688a305fe186f1cc5edd2574653c63c2c5eeb8) Thanks [@scriptcoded](https://github.com/scriptcoded)! - Enable experimentalSlotFixes to avoid React re-rendering issues with slots.
+
 ## 4.5.0
 
 ### Minor Changes
